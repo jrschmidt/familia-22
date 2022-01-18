@@ -5,14 +5,8 @@
   </div>
 </template>
 
-<script>
+<script setup>
   import TreeViewRow from './TreeViewRow.vue'
-
-  export default {
-    components: {
-      TreeViewRow
-    }
-  }
 </script>
 
 <style lang="css">
