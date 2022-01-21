@@ -1,28 +1,16 @@
 <template>
-  <div class="person-tag" :class="rl" id="pt-x">
+  <div class="person-tag" :class="rlz" id="pt-x">
     <p>AA</p>
-    <button v-on:click="markRight()">right</button>
-    <button v-on:click="markLeft()">left</button>
-    <button v-on:click="toggleRightLeft()">toggle</button>
+    <p>rlz = {{ rlz }}</p>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, defineProps } from 'vue'
 
-const rl = ref('go-right')
-
-const markRight = () => {
-  rl.value = 'go-right'
-}
-
-const markLeft = () => {
-  rl.value = 'go-left'
-}
-
-const toggleRightLeft = () => {
-  rl.value = rl.value === 'go-right' ? 'go-left' : 'go-right'
-}
+const props = defineProps({
+  rlz: String
+})
 </script>
 
 <style lang="css">
