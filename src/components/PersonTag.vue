@@ -1,16 +1,14 @@
 <template>
   <div class="person-tag" :class="rlz" id="pt-x">
-    <p>AA</p>
-    <p>rlz = {{ rlz }}</p>
+    <p><strong>PersonTag </strong></p>
+    <p><em>{{ rlz }}</em></p>
   </div>
 </template>
 
 <script setup>
-import { ref, defineProps } from 'vue'
+import { ref, inject } from 'vue'
 
-const props = defineProps({
-  rlz: String
-})
+const rlz = inject('rlz')
 </script>
 
 <style lang="css">
@@ -18,6 +16,12 @@ const props = defineProps({
   width: 100px;
   border-color: blue;
   border-style: dotted;
+  color: green;
+  font-size: 0.85rem;
+}
+
+.person-tag p {
+  margin: 8px;
 }
 
 .go-right{
