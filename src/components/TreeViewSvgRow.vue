@@ -1,16 +1,16 @@
 <template>
-  <div class="tree-view-row">
-    <PersonTag/>
+  <div class="tree-view-svg-row">
+    <ConnectorSvg/>
   </div>
 </template>
 
 <script setup>
-import PersonTag from './PersonTag.vue'
+import ConnectorSvg from './ConnectorSvg.vue'
 
 </script>
 
 <style lang="css">
-.tree-view-row {
+.tree-view-svg-row {
   border-color: green;
   border-style: dotted;
   display: grid;
