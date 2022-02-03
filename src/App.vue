@@ -1,9 +1,9 @@
 <template>
-  <TreeViewBox/>
+  <TreeView/>
 </template>
 
 <script setup>
-import TreeViewBox from './components/TreeViewBox.vue'
+import TreeView from './components/TreeView.vue'
 </script>
 
 <style>
@@ -13,6 +13,5 @@ import TreeViewBox from './components/TreeViewBox.vue'
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

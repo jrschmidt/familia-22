@@ -1,10 +1,8 @@
 <template>
   <div class="tree-view-box">
-    <h5>TreeViewBox component</h5>
-    <button v-on:click="toggleSvg()">SVG</button>
-    <button v-on:click="toggleRightLeft()">toggle</button>
-    <TreeViewRow/>
-    <TreeViewSvgRow/>
+    <!-- <transtion-group> -->
+      <TreeViewRow v-for="row in treeData" v-bind:key="row.id" v-bind:tag="row.tag"/>
+    <!-- </transtion-group> -->
   </div>
 </template>
 
@@ -12,26 +10,14 @@
 import TreeViewRow from './TreeViewRow.vue'
 import TreeViewSvgRow from './TreeViewSvgRow.vue'
 
-import { ref, provide } from 'vue'
+import { inject } from 'vue'
 
-const rlz = ref('go-right')
-const svgSize = ref('span-4')
-
-provide('rlz', rlz)
-provide('svgSize', svgSize)
-
-const toggleRightLeft = () => {
-  rlz.value = rlz.value === 'go-right' ? 'go-left' : 'go-right'
-}
-
-const toggleSvg = () => {
-  svgSize.value = svgSize.value === 'span-4' ? 'span-2' : 'span-4'
-}
+const treeData = inject('treeData')
 </script>
 
 <style lang="css">
-  .tree-view-box {
-    border-color: maroon;
-    border-style: dotted;
-  }
+.tree-view-box {
+  max-height: 430px;
+  overflow: hidden;
+}
 </style>
