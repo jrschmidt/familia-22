@@ -1,6 +1,9 @@
 <template>
-  <div class="tree-view-row" :class="collapse">
+  <!-- <div class="tree-view-row" :class="rowClass[key]"> -->
+  <!-- <div class="tree-view-row" :class="rowClass[id]"> -->
+  <div class="tree-view-row">
     <span>{{ tag }}</span>
+    <span>{{ id }}</span>
     <PersonTag/>
   </div>
 </template>
@@ -11,7 +14,8 @@ import PersonTag from './PersonTag.vue'
 import { inject } from 'vue'
 
 const props = defineProps({
-  tag:String
+  tag:String,
+  id: String
 })
 
 const collapse = inject('collapse')
@@ -28,7 +32,15 @@ const collapse = inject('collapse')
   grid-template-rows: 80px;
 }
 
-.collapse {
-  height: 0px;
+.normal {
+  height: 100%;
+}
+
+.adding {
+  height: 100%;
+}
+
+.deleting {
+  height: 0%;
 }
 </style>
