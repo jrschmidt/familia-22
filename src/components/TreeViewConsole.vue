@@ -1,17 +1,17 @@
 <template>
-  <div class="tree-view">
-    <h5>TreeView component</h5>
+  <div class="tree-view-console">
+    <h5>TreeViewConsole component</h5>
     <button v-on:click="toggleCollapse()">collapse</button>
     <button v-on:click="toggleSvg()">SVG</button>
     <button v-on:click="toggleRightLeft()">toggle</button>
     <button v-on:click="removeFromTop()">remove first in array</button>
     <button v-on:click="removeFromBottom()">remove last in array</button>
-    <TreeViewBox/>
+    <TreeViewDisplay/>
   </div>
 </template>
 
 <script setup>
-import TreeViewBox from './TreeViewBox.vue'
+import TreeViewDisplay from './TreeViewDisplay.vue'
 
 import { ref, provide } from 'vue'
 
@@ -136,7 +136,7 @@ const removeFromBottom = () => {
 </script>
 
 <style lang="css">
-.tree-view {
+.tree-view-console {
   border-color: maroon;
   border-style: dotted;
 }

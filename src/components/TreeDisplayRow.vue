@@ -1,7 +1,7 @@
 <template>
-  <!-- <div class="tree-view-row" :class="rowClass[key]"> -->
-  <!-- <div class="tree-view-row" :class="rowClass[id]"> -->
-  <div class="tree-view-row">
+  <!-- <div class="tree-display-row" :class="rowClass[key]"> -->
+  <!-- <div class="tree-display-row" :class="rowClass[id]"> -->
+  <div class="tree-display-row">
     <span>{{ tag }}</span>
     <span>{{ id }}</span>
     <PersonTag/>
@@ -23,7 +23,7 @@ const collapse = inject('collapse')
 </script>
 
 <style lang="css">
-.tree-view-row {
+.tree-display-row {
   overflow: hidden;
   border-color: green;
   border-style: dotted;

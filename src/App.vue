@@ -1,9 +1,9 @@
 <template>
-  <TreeView/>
+  <TreeViewConsole/>
 </template>
 
 <script setup>
-import TreeView from './components/TreeView.vue'
+import TreeViewConsole from './components/TreeViewConsole.vue'
 </script>
 
 <style>

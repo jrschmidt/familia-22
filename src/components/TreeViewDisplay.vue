@@ -1,17 +1,15 @@
 <template>
-  <div class="tree-view-box">
-    <!-- <transtion-group> -->
-      <TreeViewRow
+  <div class="tree-view-display">
+      <TreeDisplayRow
       v-for="row in treeData"
       v-bind:key="row.id"
       v-bind:id="row.id"
       v-bind:tag="row.tag"/>
-    <!-- </transtion-group> -->
   </div>
 </template>
 
 <script setup>
-import TreeViewRow from './TreeViewRow.vue'
+import TreeDisplayRow from './TreeDisplayRow.vue'
 import TreeViewSvgRow from './TreeViewSvgRow.vue'
 
 import { inject } from 'vue'
@@ -20,7 +18,7 @@ const treeData = inject('treeData')
 </script>
 
 <style lang="css">
-.tree-view-box {
+.tree-view-display {
   max-height: 430px;
   overflow: hidden;
 }
