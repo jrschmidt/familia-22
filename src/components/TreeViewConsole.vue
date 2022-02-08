@@ -15,6 +15,9 @@ import TreeViewDisplay from './TreeViewDisplay.vue'
 
 import { ref, provide } from 'vue'
 
+import { treeData } from '../tree-data.js'
+console.log(treeData)
+
 const rightLeft = ref('go-right')
 const svgSize = ref('span-4')
 const collapse = ref('')
@@ -63,7 +66,7 @@ const originalTreeData = [
   }
 ]
 
-const treeData = ref(originalTreeData)
+// const treeData = ref(originalTreeData)
 
 const rowViewData = ref({
   row4: {
