@@ -8,13 +8,14 @@ export const treeDisplayInit = (treeData, rootPersonId, generations) => {
   displayData.displayRootPersonId = rootPersonId
   displayData.displayStatus = 'normal'
 
-  displayData.row0Id = []
-  displayData.row1Id = []
-  displayData.row2Id = []
-  displayData.row3Id = []
-  displayData.row4Id = []
+  const empties = [ {},{},{},{},{} ]
+  displayData.rows = empties.map((row, index) => {
+    row.status = 'normal'
+    row.generation = index
+    return row
+  })
 
-  displayData.row0Id[0] = rootPersonId
+  // displayData.rows[0][0] = rootPersonId
 
   displayData.result = successStatus
   return displayData

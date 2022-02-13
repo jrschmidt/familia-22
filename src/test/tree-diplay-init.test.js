@@ -34,9 +34,26 @@ describe('treeDisplayInit function', () => {
     expect(displayData.displayRootPersonId).toBe('p0001')
   })
 
-  test('places root display person in row 0', () => {
+  test('creates array of row data', () => {
     let displayData = treeDisplayInit(treeData, 'p0001', 5)
-    expect(displayData.row0Id[0]).toEqual('p0001')
+    expect(displayData.rows.length).toEqual(5)
   })
+
+  test('gives each row a status of "normal"', () => {
+    let displayData = treeDisplayInit(treeData, 'p0001', 5)
+    expect(displayData.rows[1].status).toEqual('normal')
+    expect(displayData.rows[4].status).toEqual('normal')
+  })
+
+  test('sets generation property of each row', () => {
+    let displayData = treeDisplayInit(treeData, 'p0001', 5)
+    expect(displayData.rows[0].generation).toEqual(0)
+    expect(displayData.rows[3].generation).toEqual(3)
+  })
+
+  // test('places root display person in row 0', () => {
+  //   let displayData = treeDisplayInit(treeData, 'p0001', 5)
+  //   expect(displayData.rows[0].people[0]).toEqual('p0001')
+  // })
 
 })
