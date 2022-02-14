@@ -3,6 +3,8 @@ import { test, describe, expect } from 'vitest'
 import { treeData } from '../tree-data.js'
 import { fillTree } from '../display-data-functions.js'
 
+// This set of sample data represents what the state of the display data
+// might be before the fillTree() function is called.
 const getPartialDisplayData = () => {
   const rows = [
     {

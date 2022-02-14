@@ -1,3 +1,5 @@
+// A sample set of family tree data with 5 generations and no gaps.
+
 export const treeData = {
   p0001:
     {
