@@ -1,19 +1,13 @@
 <template>
-  <div class="person-tag" :class="rightLeft" id="pt-x">
-    <p><strong>PersonTag {{ tag }}</strong></p>
-    <p><em>{{ rightLeft }}</em></p>
+  <div class="person-tag" id="id">
+    <p><strong>{{ id }}</strong></p>
   </div>
 </template>
 
 <script setup>
-import { inject } from 'vue'
-
 const props = defineProps({
-  id: String,
-  tag: String
+  id: String
 })
-
-const rightLeft = inject('rightLeft')
 </script>
 
 <style lang="css">

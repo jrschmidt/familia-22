@@ -1,25 +1,20 @@
 <template>
-  <!-- <div class="tree-display-row" :class="rowClass[key]"> -->
-  <!-- <div class="tree-display-row" :class="rowClass[id]"> -->
   <div class="tree-display-row">
-    <span>{{ tag }}</span>
-    <span>{{ id }}</span>
-    <PersonTag/>
+    <PersonTag
+      v-for="(person, index) in people"
+      v-bind:key="person"
+      v-bind:id="person"
+    />
   </div>
 </template>
 
 <script setup>
 import PersonTag from './PersonTag.vue'
 
-import { inject } from 'vue'
-
 const props = defineProps({
-  tag:String,
-  id: String
+  id: String,
+  people: Array
 })
-
-const collapse = inject('collapse')
-
 </script>
 
 <style lang="css">
