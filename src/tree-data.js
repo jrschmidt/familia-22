@@ -306,7 +306,7 @@ export const treeData = {
   p0026:
     {
       firstname: 'Mark',
-      lastname: 'larson',
+      lastname: 'Larson',
       gender: 'male',
       generation: 4,
       fatherId: null,

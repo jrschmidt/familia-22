@@ -27,7 +27,6 @@ const rowNames = ref( ['row0' ,'row1' ,'row2' ,'row3' ,'row4'] )
 
 <style lang="css">
 .tree-view-display {
-  max-height: 430px;
   overflow: hidden;
 }
 </style>

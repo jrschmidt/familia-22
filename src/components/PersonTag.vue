@@ -1,18 +1,23 @@
 <template>
   <div class="person-tag" id="id">
-    <p><strong>{{ id }}</strong></p>
+    <p><strong>{{ personId }}</strong></p>
+    <p><strong>{{ personData.firstname }} {{personData.lastname}}</strong></p>
   </div>
 </template>
 
 <script setup>
+import { computed } from 'vue'
+
 const props = defineProps({
-  id: String
+  personId: String,
+  personData: Object
 })
+
 </script>
 
 <style lang="css">
 .person-tag {
-  width: 100px;
+  width: 70px;
   border-color: blue;
   border-style: dotted;
   color: green;
