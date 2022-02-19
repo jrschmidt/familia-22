@@ -21,7 +21,7 @@ const treeData = inject('treeData')
 let displayData = treeDisplayInit(treeData, treeData.rootPerson, 5)
 provide('displayData', displayData)
 
-const rowNames = ref( ['row0' ,'row1' ,'row2' ,'row3' ,'row4'] )
+const rowNames = ref( ['row0', 'row1', 'row2', 'row3', 'row4'] )
 
 </script>
 

@@ -42,8 +42,9 @@ export const treeDisplayInit = (treeData, rootPersonId, generations) => {
   const empties = [ {},{},{},{},{} ]
   displayData.rows = empties.map((row, index) => {
     row.status = 'normal'
-    row.generation = index,
+    row.generation = 4 - index
     row.people = []
+    // console.log(index, row.generation)
     return row
   })
 
@@ -51,7 +52,6 @@ export const treeDisplayInit = (treeData, rootPersonId, generations) => {
     treeData,
     displayData,
     rootPersonId,
-    0,
     0,
     generations - 1
   )
@@ -66,10 +66,9 @@ export const fillTree = (
   displayData,
   rootPerson,
   rootGeneration,
-  rootPersonIndexInRow,
   endGeneration
 ) => {
-  displayData.rows[rootGeneration].people.push(rootPerson)
+  displayData.rows[endGeneration - rootGeneration].people.push(rootPerson)
 
   if (rootGeneration != endGeneration) {
     fillTree(
@@ -77,7 +76,6 @@ export const fillTree = (
       displayData,
       treeData[rootPerson].fatherId,
       rootGeneration + 1,
-      displayData.rows[rootGeneration + 1].length,
       endGeneration
     )
 
@@ -86,7 +84,6 @@ export const fillTree = (
       displayData,
       treeData[rootPerson].motherId,
       rootGeneration + 1,
-      displayData.rows[rootGeneration + 1].length,
       endGeneration
     )
 
