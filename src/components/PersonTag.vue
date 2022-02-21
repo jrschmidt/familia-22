@@ -21,7 +21,7 @@ const props = defineProps({
   border-color: blue;
   border-style: dotted;
   color: green;
-  font-size: 0.85rem;
+  font-size: 0.6rem;
 }
 
 .person-tag p {

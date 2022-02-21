@@ -210,7 +210,7 @@ export const treeData = {
   p0018:
     {
       firstname: 'Michael',
-      lastname: 'johnson',
+      lastname: 'Johnson',
       gender: 'male',
       generation: 2,
       fatherId: 'p0020',

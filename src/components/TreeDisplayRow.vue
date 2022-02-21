@@ -28,13 +28,13 @@ const getPersonData = (personId) => {
 
 <style lang="css">
 .tree-display-row {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
   overflow: hidden;
   border-color: green;
   border-style: dotted;
 }
-/* display: grid;
-grid-template-columns: 100px 100px 100px 100px 100px;
-grid-template-rows: 80px; */
 
 .normal {
   height: 100%;
