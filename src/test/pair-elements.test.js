@@ -10,8 +10,6 @@ describe('pairArrayElements function', () => {
     expect(resultArray).toStrictEqual( [] )
   })
 
-})
-
 test('converts array to array of paired elements in subarrays', () => {
   let inputArray = ['p0002' ,'p0017']
   let resultArray = pairArrayElements(inputArray)
@@ -24,4 +22,6 @@ test('converts array to array of paired elements in subarrays', () => {
   inputArray = ['p0005', 'p0006', 'p0007', 'p0008', 'p0020', 'p0021', 'p0022', 'p0023']
   resultArray = pairArrayElements(inputArray)
   expect(resultArray).toStrictEqual( [ ['p0005', 'p0006'], ['p0007', 'p0008'], ['p0020', 'p0021'], ['p0022', 'p0023'] ] )
+})
+
 })

@@ -85,7 +85,7 @@ describe('treeDisplayInit function', () => {
     expect(displayData.rows[0].people[5][1]).toEqual('p0027')
     expect(displayData.rows[0].people[6][0]).toEqual('p0028')
     expect(displayData.rows[0].people[6][1]).toEqual('p0029')
-    expect(displayData.rows[0].people[7[0]]).toEqual('p0030')
+    expect(displayData.rows[0].people[7][0]).toEqual('p0030')
     expect(displayData.rows[0].people[7][1]).toEqual('p0031')
   })
 

@@ -43,8 +43,8 @@
 //
 // [ [a,b], [c,d], [e,f], [g,h] ]
 //
-// This is used to pair mother/father pairs so they can be displayed next to
-// each other.
+// This is used to pair mother/father pairs in the view model so they can be
+// displayed next to each other.
 
 
 export const treeDisplayInit = (treeData, rootPersonId, generations) => {
@@ -61,6 +61,7 @@ export const treeDisplayInit = (treeData, rootPersonId, generations) => {
   const empties = [ {},{},{},{},{} ]
   displayData.rows = empties.map((row, index) => {
     row.status = 'normal'
+    row.count = 0
     row.generation = 4 - index
     row.people = []
     return row
@@ -86,7 +87,8 @@ export const growTree = (
   rootGeneration,
   endGeneration
 ) => {
-  displayData.rows[endGeneration - rootGeneration].people.push(startPerson)
+  // displayData.rows[endGeneration - rootGeneration].people.push(startPerson)
+  placePerson(displayData.rows[endGeneration - rootGeneration].people, startPerson)
 
   if (rootGeneration != endGeneration) {
     growTree(
@@ -105,6 +107,20 @@ export const growTree = (
       endGeneration
     )
 
+  }
+}
+
+
+export const placePerson = (row, item) => {
+  if (row.length === 0) {
+    row.push( [item] )
+  }
+  else {
+    let index = row.length -1
+    if (row[index].length === 1)
+      row[index].push(item)
+    else
+      row.push( [item] )
   }
 }
 
