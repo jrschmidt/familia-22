@@ -1,6 +1,6 @@
 import { test, describe, expect } from 'vitest'
 
-import { treeData } from '../tree-data.js'
+import { familyTreeData } from '../family-tree-data.js'
 import { growTree } from '../display-data-functions.js'
 
 // This set of sample data represents what the state of the display data
@@ -52,7 +52,7 @@ describe('growTree function', () => {
 
   test('sets correct root person', () => {
     let displayData = getPartialDisplayData()
-    growTree(treeData, displayData, 'p0001', 0, 4)
+    growTree(familyTreeData, displayData, 'p0001', 0, 4)
 
     expect(displayData.rows[4].status).toEqual('normal')
     expect(displayData.rows[4].generation).toEqual(0)
@@ -61,7 +61,7 @@ describe('growTree function', () => {
 
   test('correctly sets father and mother of root person', () => {
     let displayData = getPartialDisplayData()
-    growTree(treeData, displayData, 'p0001', 0, 4)
+    growTree(familyTreeData, displayData, 'p0001', 0, 4)
 
     expect(displayData.rows[3].people[0][0]).toEqual('p0002')
     expect(displayData.rows[3].people[0][1]).toEqual('p0017')
@@ -69,7 +69,7 @@ describe('growTree function', () => {
 
   test('correctly sets older generations', () => {
     let displayData = getPartialDisplayData()
-    growTree(treeData, displayData, 'p0001', 0, 4)
+    growTree(familyTreeData, displayData, 'p0001', 0, 4)
 
     expect(displayData.rows[2].people[0][0]).toEqual('p0003')
     expect(displayData.rows[2].people[0][1]).toEqual('p0004')

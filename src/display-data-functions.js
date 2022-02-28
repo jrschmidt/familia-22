@@ -48,18 +48,18 @@
 
 
 export const treeDisplayInit = (treeData, rootPersonId, generations) => {
-  let displayData = {}
+  let viewModelData = {}
   let successStatus = 'success'
 
   // (For the time being we are only implementing a display with 5 generations.)
   if (generations != 5) successStatus = 'fail'
 
-  displayData.generationsDisplayed = generations
-  displayData.displayRootPersonId = rootPersonId
-  displayData.displayStatus = 'normal'
+  viewModelData.generationsDisplayed = generations
+  viewModelData.displayRootPersonId = rootPersonId
+  viewModelData.displayStatus = 'normal'
 
   const empties = [ {},{},{},{},{} ]
-  displayData.rows = empties.map((row, index) => {
+  viewModelData.rows = empties.map((row, index) => {
     row.status = 'normal'
     row.count = 0
     row.generation = 4 - index
@@ -69,31 +69,31 @@ export const treeDisplayInit = (treeData, rootPersonId, generations) => {
 
   growTree(
     treeData,
-    displayData,
+    viewModelData,
     rootPersonId,
     0,
     generations - 1
   )
 
-  displayData.result = successStatus
-  return displayData
+  viewModelData.result = successStatus
+  return viewModelData
 }
 
 
 export const growTree = (
   treeData,
-  displayData,
+  viewModelData,
   startPerson,
   rootGeneration,
   endGeneration
 ) => {
-  // displayData.rows[endGeneration - rootGeneration].people.push(startPerson)
-  placePerson(displayData.rows[endGeneration - rootGeneration].people, startPerson)
+  // viewModelData.rows[endGeneration - rootGeneration].people.push(startPerson)
+  placePerson(viewModelData.rows[endGeneration - rootGeneration].people, startPerson)
 
   if (rootGeneration != endGeneration) {
     growTree(
       treeData,
-      displayData,
+      viewModelData,
       treeData[startPerson].fatherId,
       rootGeneration + 1,
       endGeneration
@@ -101,7 +101,7 @@ export const growTree = (
 
     growTree(
       treeData,
-      displayData,
+      viewModelData,
       treeData[startPerson].motherId,
       rootGeneration + 1,
       endGeneration
