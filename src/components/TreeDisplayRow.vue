@@ -19,10 +19,10 @@ const props = defineProps({
   people: Array
 })
 
-const treeData = inject('treeData')
+const familyTreeData = inject('familyTreeData')
 
 const getPersonData = (personId) => {
-  return treeData[personId]
+  return familyTreeData[personId]
 }
 </script>
 

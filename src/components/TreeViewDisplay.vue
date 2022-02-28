@@ -17,8 +17,8 @@ import { treeDisplayInit } from '../display-data-functions.js'
 
 import { inject, provide, ref } from 'vue'
 
-const treeData = inject('treeData')
-let viewModelData = treeDisplayInit(treeData, treeData.rootPerson, 5)
+const familyTreeData = inject('familyTreeData')
+let viewModelData = treeDisplayInit(familyTreeData, familyTreeData.rootPerson, 5)
 provide('viewModelData', viewModelData)
 
 const rowNames = ref( ['row0', 'row1', 'row2', 'row3', 'row4'] )

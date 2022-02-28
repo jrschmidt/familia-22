@@ -10,9 +10,9 @@ import TreeViewDisplay from './TreeViewDisplay.vue'
 
 import { ref, provide } from 'vue'
 
-import { treeData } from '../tree-data.js'
+import { familyTreeData } from '../family-tree-data.js'
 
-provide ('treeData', treeData)
+provide ('familyTreeData', familyTreeData)
 </script>
 
 <style lang="css">
