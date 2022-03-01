@@ -6,13 +6,10 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-
 const props = defineProps({
   personId: String,
   personData: Object
 })
-
 </script>
 
 <style lang="css">

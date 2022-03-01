@@ -8,7 +8,7 @@
 <script setup>
 import TreeViewDisplay from './TreeViewDisplay.vue'
 
-import { ref, provide } from 'vue'
+import { provide } from 'vue'
 
 import { familyTreeData } from '../family-tree-data.js'
 

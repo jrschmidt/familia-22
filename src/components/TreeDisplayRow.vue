@@ -1,28 +1,40 @@
 <template>
   <div class="tree-display-row">
-    <PersonTag
-      v-for="(personId, index) in people"
-      v-bind:key="personId"
-      v-bind:personId="personId"
-      v-bind:personData="getPersonData(personId)"
-    />
+    <div v-if="notSingletonRow(people)">
+      <PersonPair
+        v-for="pair in people"
+        v-bind:key="generatePairId(pair)"
+        v-bind:pair="pair"
+      />
+    </div>
+    <div v-else>
+      <PersonPairSingleton
+      v-bind:key="getSingletonId(people)"
+      v-bind:personId="getSingletonId(people)"
+      />
+    </div>
   </div>
 </template>
 
 <script setup>
-import PersonTag from './PersonTag.vue'
-
-import { inject } from 'vue'
+import PersonPair from './PersonPair.vue'
+import PersonPairSingleton from './PersonPairSingleton.vue'
 
 const props = defineProps({
   id: String,
   people: Array
 })
 
-const familyTreeData = inject('familyTreeData')
+const notSingletonRow = (people) => {
+  return ( people[people.length - 1].length > 1 )
+}
 
-const getPersonData = (personId) => {
-  return familyTreeData[personId]
+const generatePairId = (pair) => {
+  return pair[0] + pair[1]
+}
+
+const getSingletonId = (people) => {
+  return people[0][0]
 }
 </script>
 
