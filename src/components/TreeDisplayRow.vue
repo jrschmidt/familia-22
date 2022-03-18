@@ -44,8 +44,6 @@ const getSingletonId = (people) => {
   flex-direction: row;
   justify-content:space-around;
   overflow: hidden;
-  border-color: green;
-  border-style: dotted;
 }
 
 .normal {

@@ -14,7 +14,7 @@ const props = defineProps({
 
 <style lang="css">
 .person-tag {
-  width: 70px;
+  width: 60px;
   border-color: blue;
   border-style: dotted;
   color: green;

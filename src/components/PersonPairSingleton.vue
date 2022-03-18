@@ -25,14 +25,6 @@ const getPersonData = (personId) => {
 </script>
 
 <style lang="css">
-.person-tag {
-  width: 70px;
-  border-color: blue;
-  border-style: dotted;
-  color: green;
-  font-size: 0.6rem;
-}
-
 .person-tag p {
   margin: 8px;
 }
