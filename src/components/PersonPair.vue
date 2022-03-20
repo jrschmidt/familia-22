@@ -46,6 +46,6 @@ const getPersonTwoData = (pair) => {
   display: inline-flex;
   flex-direction: row;
   justify-content:space-around;
-  margin: auto 10px auto 10px;
+  margin: auto 5px auto 5px;
 }
 </style>

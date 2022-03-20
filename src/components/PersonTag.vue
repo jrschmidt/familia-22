@@ -1,6 +1,7 @@
 <template>
   <div class="person-tag" id="id">
-    <p><strong>{{ personId }}</strong></p>
+    <p v-if="personData.birthdate"><strong>{{'b' + personData.birthdate.slice(7) }}</strong></p>
+    <p v-if="personData.deathdate"><strong>{{'d' + personData.deathdate }}</strong></p>
     <p><strong>{{ personData.firstname }} {{personData.lastname}}</strong></p>
   </div>
 </template>
@@ -14,9 +15,8 @@ const props = defineProps({
 
 <style lang="css">
 .person-tag {
-  width: 60px;
-  border-color: blue;
-  border-style: dotted;
+  width: 50px;
+  border: black solid 1px;
   color: green;
   font-size: 0.6rem;
 }
