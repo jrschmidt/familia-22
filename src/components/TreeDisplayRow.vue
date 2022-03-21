@@ -1,18 +1,17 @@
 <template>
   <div class="tree-display-row">
-    <div v-if="notSingletonRow(people)">
       <PersonPair
-        v-for="pair in people"
-        v-bind:key="generatePairId(pair)"
+        v-if="notSingletonRow(people)"
+        v-for="(pair, index) in people"
+        v-bind:key="generatePairId(pair, id)"
+        v-bind:class="getColumnClass(id, index)"
         v-bind:pair="pair"
       />
-    </div>
-    <div v-else>
       <PersonPairSingleton
+      v-else
       v-bind:key="getSingletonId(people)"
       v-bind:personId="getSingletonId(people)"
       />
-    </div>
   </div>
 </template>
 
@@ -33,6 +32,17 @@ const generatePairId = (pair) => {
   return pair[0] + pair[1]
 }
 
+const getColumnClass = (rowId, index) => {
+  const columnClasses = {
+    row0: ['pc13', 'pc35', 'pc57', 'pc79', 'pc911', 'pc1113', 'pc1315', 'pc1517'],
+    row1: ['pc24', 'pc68', 'pc1012', 'pc1416'],
+    row2: ['pc46', 'pc1214'],
+    row3: ['pc810']
+  }
+
+  return columnClasses[rowId][index]
+}
+
 const getSingletonId = (people) => {
   return people[0][0]
 }
@@ -40,21 +50,8 @@ const getSingletonId = (people) => {
 
 <style lang="css">
 .tree-display-row {
-  display: flex;
-  flex-direction: row;
-  justify-content:space-around;
-  overflow: hidden;
-}
-
-.normal {
-  height: 100%;
-}
-
-.adding {
-  height: 100%;
-}
-
-.deleting {
-  height: 0%;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px;
 }
 </style>
