@@ -1,6 +1,6 @@
 <template>
   <div class="person-tag">
-    <p>p-tag</p>
+    <p>P</p>
   </div>
 </template>
 
@@ -13,7 +13,6 @@ const props = defineProps({
 
 <style lang="css">
 .person-tag {
-  max-width: 44px;
   border: black solid 1px;
   color: green;
   font-size: 0.6rem;
