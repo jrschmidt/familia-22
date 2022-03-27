@@ -19,7 +19,7 @@ import PersonTag from './PersonTag.vue'
 import { inject } from 'vue'
 
 const props = defineProps({
-  pair: Array
+  pair: Object
 })
 
 const familyTreeData = inject('familyTreeData')

@@ -2,7 +2,7 @@
 // tree display. The following functions are included:
 
 
-// treeDisplayInit()
+// viewModelInit()
 // Generates data needed for initial rendering of family tree display.
 
 
@@ -47,7 +47,26 @@
 // displayed next to each other.
 
 
-export const treeDisplayInit = (treeData, rootPersonId, generations) => {
+export const viewModelInit = (treeData, rootPersonId, generations) => {
+  const locationLabels = [
+      'gen0root',
+      'gen1pair0',
+      'gen2pair0',
+      'gen2pair1',
+      'gen3pair0',
+      'gen3pair1',
+      'gen3pair2',
+      'gen3pair3',
+      'gen4pair0',
+      'gen4pair1',
+      'gen4pair2',
+      'gen4pair3',
+      'gen4pair4',
+      'gen4pair5',
+      'gen4pair6',
+      'gen4pair7'
+    ]
+
   let viewModelData = {}
   let successStatus = 'success'
 
@@ -57,15 +76,7 @@ export const treeDisplayInit = (treeData, rootPersonId, generations) => {
   viewModelData.generationsDisplayed = generations
   viewModelData.displayRootPersonId = rootPersonId
   viewModelData.displayStatus = 'normal'
-
-  const empties = [ {},{},{},{},{} ]
-  viewModelData.rows = empties.map((row, index) => {
-    row.status = 'normal'
-    row.count = 0
-    row.generation = 4 - index
-    row.people = []
-    return row
-  })
+  viewModelData.rows = [ [], [], [], [], [] ]
 
   growTree(
     treeData,
@@ -74,6 +85,14 @@ export const treeDisplayInit = (treeData, rootPersonId, generations) => {
     0,
     generations - 1
   )
+
+  let pairsFlat = viewModelData.rows.flat()
+  viewModelData.pairObjects = pairsFlat.map((pair, index) => {
+    return {
+      pairLocation: locationLabels[index],
+      people: pair
+    }
+  })
 
   viewModelData.result = successStatus
   return viewModelData
@@ -84,18 +103,17 @@ export const growTree = (
   treeData,
   viewModelData,
   startPerson,
-  rootGeneration,
+  subtreeStartGeneration,
   endGeneration
 ) => {
-  // viewModelData.rows[endGeneration - rootGeneration].people.push(startPerson)
-  placePerson(viewModelData.rows[endGeneration - rootGeneration].people, startPerson)
+  placePerson(viewModelData.rows[subtreeStartGeneration], startPerson)
 
-  if (rootGeneration != endGeneration) {
+  if (subtreeStartGeneration != endGeneration) {
     growTree(
       treeData,
       viewModelData,
       treeData[startPerson].fatherId,
-      rootGeneration + 1,
+      subtreeStartGeneration + 1,
       endGeneration
     )
 
@@ -103,7 +121,7 @@ export const growTree = (
       treeData,
       viewModelData,
       treeData[startPerson].motherId,
-      rootGeneration + 1,
+      subtreeStartGeneration + 1,
       endGeneration
     )
 

@@ -1,12 +1,12 @@
 <template>
   <div class="tree-view-console">
     <h5>TreeViewConsole component</h5>
-    <TreeViewDisplay/>
+    <TreeViewGrid/>
   </div>
 </template>
 
 <script setup>
-import TreeViewDisplay from './TreeViewDisplay.vue'
+import TreeViewGrid from './TreeViewGrid.vue'
 
 import { provide } from 'vue'
 
