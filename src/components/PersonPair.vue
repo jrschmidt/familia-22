@@ -1,14 +1,12 @@
 <template>
   <div class="person-pair">
     <PersonTag
-      v-bind:key="getPersonOneId(pair)"
-      v-bind:personId="getPersonOneId(pair)"
-      v-bind:personData="getPersonOneData(pair)"
+      v-bind:key="pair.people[0]"
+      v-bind:personData="getPersonData(pair, 0)"
     />
     <PersonTag
-      v-bind:key="getPersonTwoId(pair)"
-      v-bind:personId="getPersonTwoId(pair)"
-      v-bind:personData="getPersonTwoData(pair)"
+      v-bind:key="pair.people[1]"
+      v-bind:personData="getPersonData(pair, 1)"
     />
   </div>
 </template>
@@ -16,7 +14,7 @@
 <script setup>
 import PersonTag from './PersonTag.vue'
 
-import { inject } from 'vue'
+import { inject, ref } from 'vue'
 
 const props = defineProps({
   pair: Object
@@ -24,20 +22,8 @@ const props = defineProps({
 
 const familyTreeData = inject('familyTreeData')
 
-const getPersonOneId = (pair) => {
-  return pair[0]
-}
-
-const getPersonOneData = (pair) => {
-  return familyTreeData[ pair[0] ]
-}
-
-const getPersonTwoId = (pair) => {
-  return pair[1]
-}
-
-const getPersonTwoData = (pair) => {
-  return familyTreeData[ pair[1] ]
+const getPersonData = (pair, index) => {
+  return familyTreeData[pair.people[index]]
 }
 </script>
 

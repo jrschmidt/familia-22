@@ -6,7 +6,6 @@
 
 <script setup>
 const props = defineProps({
-  personId: String,
   personData: Object
 })
 </script>
