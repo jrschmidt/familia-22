@@ -1,16 +1,29 @@
 <template>
-<div class="tree-view-grid">
+  <div class="tree-view-grid">
     <PersonPair
       v-for="(pair) in pairs"
       v-bind:key="generatePairId(pair)"
       v-bind:class="pair.pairLocation"
       v-bind:pair="pair"
     />
-</div>
+    <SvgPlaceholder
+      class="svgrow1"
+    />
+    <SvgPlaceholder
+      class="svgrow2"
+    />
+    <SvgPlaceholder
+      class="svgrow3"
+    />
+    <SvgPlaceholder
+      class="svgrow4"
+    />
+  </div>
 </template>
 
 <script setup>
 import PersonPair from './PersonPair.vue'
+import SvgPlaceholder from './SvgPlaceholder.vue'
 
 import { viewModelInit } from '../display-data-functions.js'
 
@@ -42,6 +55,7 @@ const generatePairId = (pair) => {
   display: grid;
   overflow: hidden;
   grid-template-columns: 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px;
+  grid-template-rows: 30px 30px 30px 30px 30px 30px 30px 30px 30px;
 }
 
 .gen0root {
@@ -122,5 +136,25 @@ const generatePairId = (pair) => {
 .gen4pair7 {
   grid-column: 15 / 17;
   grid-row: 1;
+}
+
+.svgrow1 {
+  grid-column: 1 / 17;
+  grid-row: 2;
+}
+
+.svgrow2 {
+  grid-column: 1 / 17;
+  grid-row: 4;
+}
+
+.svgrow3 {
+  grid-column: 1 / 17;
+  grid-row: 6;
+}
+
+.svgrow4 {
+  grid-column: 1 / 17;
+  grid-row: 8;
 }
 </style>

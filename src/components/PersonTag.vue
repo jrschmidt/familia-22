@@ -1,6 +1,7 @@
 <template>
   <div class="person-tag">
-    <p>P</p>
+    <p>{{ personData.firstname }}</p>
+    <p>{{ personData.lastname }}</p>
   </div>
 </template>
 
@@ -12,9 +13,11 @@ const props = defineProps({
 
 <style lang="css">
 .person-tag {
-  border: black solid 1px;
+  background-color: #f8fff8;
   color: green;
   font-size: 0.6rem;
+  height: 30px;
+  width: 50px;
 }
 
 .person-tag p {

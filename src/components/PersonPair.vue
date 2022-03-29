@@ -4,7 +4,11 @@
       v-bind:key="pair.people[0]"
       v-bind:personData="getPersonData(pair, 0)"
     />
+    <svg height="100%" width="25%">
+      <line x1="0%" y1="50%" x2="100%" y2="50%" stroke="#999999" stroke-width="2"/>
+    </svg>
     <PersonTag
+      v-if="pair.people.length > 1"
       v-bind:key="pair.people[1]"
       v-bind:personData="getPersonData(pair, 1)"
     />
@@ -30,7 +34,7 @@ const getPersonData = (pair, index) => {
 <style lang="css">
 .person-pair {
   display: flex;
-  align-content: center;
+  justify-content: center;
 }
 
 .pc13 {
