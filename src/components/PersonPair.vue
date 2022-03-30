@@ -4,9 +4,9 @@
       v-bind:key="pair.people[0]"
       v-bind:personData="getPersonData(pair, 0)"
     />
-    <svg height="100%" width="25%">
-      <line x1="0%" y1="50%" x2="100%" y2="50%" stroke="#999999" stroke-width="2"/>
-    </svg>
+  <PairConnectorSvg
+    v-if="pair.people.length > 1"
+  />
     <PersonTag
       v-if="pair.people.length > 1"
       v-bind:key="pair.people[1]"
@@ -17,6 +17,7 @@
 
 <script setup>
 import PersonTag from './PersonTag.vue'
+import PairConnectorSvg from './PairConnectorSvg.vue'
 
 import { inject, ref } from 'vue'
 
@@ -35,6 +36,18 @@ const getPersonData = (pair, index) => {
 .person-pair {
   display: flex;
   justify-content: center;
+}
+
+.normal {
+  width: 240px;
+}
+
+.compressed {
+  width: 120px;
+}
+
+.singleton {
+  width: 120px;
 }
 
 .pc13 {

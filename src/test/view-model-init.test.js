@@ -78,82 +78,82 @@ describe('viewModelInit function', () => {
     let viewModelData = viewModelInit(familyTreeData, 'p0001', 5)
 
     expect(viewModelData.pairObjects[0]).toEqual({
-      pairLocation: 'gen0root',
+      pairLocation: 'singleton gen0root',
       people: ['p0001']}
     )
 
     expect(viewModelData.pairObjects[1]).toEqual({
-      pairLocation: 'gen1pair0',
+      pairLocation: 'normal gen1pair0',
       people: ['p0002', 'p0017']}
     )
 
     expect(viewModelData.pairObjects[2]).toEqual({
-      pairLocation: 'gen2pair0',
+      pairLocation: 'normal gen2pair0',
       people: ['p0003', 'p0004']}
     )
 
     expect(viewModelData.pairObjects[3]).toEqual({
-      pairLocation: 'gen2pair1',
+      pairLocation: 'normal gen2pair1',
       people: ['p0018', 'p0019']}
     )
 
     expect(viewModelData.pairObjects[4]).toEqual({
-      pairLocation: 'gen3pair0',
+      pairLocation: 'normal gen3pair0',
       people: ['p0005', 'p0006']}
     )
 
     expect(viewModelData.pairObjects[5]).toEqual({
-      pairLocation: 'gen3pair1',
+      pairLocation: 'normal gen3pair1',
       people: ['p0007', 'p0008']}
     )
 
     expect(viewModelData.pairObjects[6]).toEqual({
-      pairLocation: 'gen3pair2',
+      pairLocation: 'normal gen3pair2',
       people: ['p0020', 'p0021']}
     )
 
     expect(viewModelData.pairObjects[7]).toEqual({
-      pairLocation: 'gen3pair3',
+      pairLocation: 'normal gen3pair3',
       people: ['p0022', 'p0023']}
     )
 
     expect(viewModelData.pairObjects[8]).toEqual({
-      pairLocation: 'gen4pair0',
+      pairLocation: 'compressed gen4pair0',
       people: ['p0009', 'p0010']}
     )
 
     expect(viewModelData.pairObjects[9]).toEqual({
-      pairLocation: 'gen4pair1',
+      pairLocation: 'compressed gen4pair1',
       people: ['p0011', 'p0012']}
     )
 
     expect(viewModelData.pairObjects[10]).toEqual({
-      pairLocation: 'gen4pair2',
+      pairLocation: 'compressed gen4pair2',
       people: ['p0013', 'p0014']}
     )
 
     expect(viewModelData.pairObjects[11]).toEqual({
-      pairLocation: 'gen4pair3',
+      pairLocation: 'compressed gen4pair3',
       people: ['p0015', 'p0016']}
     )
 
     expect(viewModelData.pairObjects[12]).toEqual({
-      pairLocation: 'gen4pair4',
+      pairLocation: 'compressed gen4pair4',
       people: ['p0024', 'p0025']}
     )
 
     expect(viewModelData.pairObjects[13]).toEqual({
-      pairLocation: 'gen4pair5',
+      pairLocation: 'compressed gen4pair5',
       people: ['p0026', 'p0027']}
     )
 
     expect(viewModelData.pairObjects[14]).toEqual({
-      pairLocation: 'gen4pair6',
+      pairLocation: 'compressed gen4pair6',
       people: ['p0028', 'p0029']}
     )
 
     expect(viewModelData.pairObjects[15]).toEqual({
-      pairLocation: 'gen4pair7',
+      pairLocation: 'compressed gen4pair7',
       people: ['p0030', 'p0031']}
     )
   })

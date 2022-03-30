@@ -10,7 +10,7 @@
 <style lang="css">
 .svg-placeholder {
   border: #cccccc solid 1px;
-  color: #999999;
+  color: #99cc99;
   font-size: 0.6rem;
   font-weight: bold;
 }

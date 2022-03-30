@@ -54,6 +54,7 @@ const generatePairId = (pair) => {
 .tree-view-grid {
   display: grid;
   overflow: hidden;
+  background-color: #ddeeee;
   grid-template-columns: 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px;
   grid-template-rows: 30px 30px 30px 30px 30px 30px 30px 30px 30px;
 }
