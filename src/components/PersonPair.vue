@@ -1,13 +1,12 @@
 <template>
   <div class="person-pair">
     <PersonTag
+      class="pt-left"
       v-bind:key="pair.people[0]"
       v-bind:personData="getPersonData(pair, 0)"
     />
-  <PairConnectorSvg
-    v-if="pair.people.length > 1"
-  />
     <PersonTag
+      class="pt-right"
       v-if="pair.people.length > 1"
       v-bind:key="pair.people[1]"
       v-bind:personData="getPersonData(pair, 1)"
@@ -17,9 +16,8 @@
 
 <script setup>
 import PersonTag from './PersonTag.vue'
-import PairConnectorSvg from './PairConnectorSvg.vue'
 
-import { inject, ref } from 'vue'
+import { inject } from 'vue'
 
 const props = defineProps({
   pair: Object

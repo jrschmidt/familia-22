@@ -48,7 +48,7 @@
 
 
 export const viewModelInit = (treeData, rootPersonId, generations) => {
-  const locationLabels = [
+  const pairFixedClasses = [
       'singleton gen0root',
       'normal gen1pair0',
       'normal gen2pair0',
@@ -66,6 +66,24 @@ export const viewModelInit = (treeData, rootPersonId, generations) => {
       'compressed gen4pair6',
       'compressed gen4pair7'
     ]
+
+  const connectorFixedClasses = [
+    'straight parents-of-0-0',
+    'left parents-of-1-0',
+    'right parents-of-1-1',
+    'left parents-of-2-0',
+    'right parents-of-2-1',
+    'left parents-of-2-2',
+    'right parents-of-2-3',
+    ' straight parents-of-3-0',
+    ' straight parents-of-3-1',
+    ' straight parents-of-3-2',
+    ' straight parents-of-3-3',
+    ' straight parents-of-3-4',
+    ' straight parents-of-3-5',
+    ' straight parents-of-3-6',
+    ' straight parents-of-3-7'
+  ]
 
   let viewModelData = {}
   let successStatus = 'success'
@@ -89,10 +107,12 @@ export const viewModelInit = (treeData, rootPersonId, generations) => {
   let pairsFlat = viewModelData.rows.flat()
   viewModelData.pairObjects = pairsFlat.map((pair, index) => {
     return {
-      pairLocation: locationLabels[index],
+      pairClass: pairFixedClasses[index],
       people: pair
     }
   })
+
+  viewModelData.connectorClasses = [...connectorFixedClasses]
 
   viewModelData.result = successStatus
   return viewModelData

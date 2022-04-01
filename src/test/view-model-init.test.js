@@ -77,85 +77,106 @@ describe('viewModelInit function', () => {
   test('correctly generates flattened array of people pair data', () => {
     let viewModelData = viewModelInit(familyTreeData, 'p0001', 5)
 
+    expect(viewModelData.pairObjects.length).toEqual(16)
+
     expect(viewModelData.pairObjects[0]).toEqual({
-      pairLocation: 'singleton gen0root',
+      pairClass: 'singleton gen0root',
       people: ['p0001']}
     )
 
     expect(viewModelData.pairObjects[1]).toEqual({
-      pairLocation: 'normal gen1pair0',
+      pairClass: 'normal gen1pair0',
       people: ['p0002', 'p0017']}
     )
 
     expect(viewModelData.pairObjects[2]).toEqual({
-      pairLocation: 'normal gen2pair0',
+      pairClass: 'normal gen2pair0',
       people: ['p0003', 'p0004']}
     )
 
     expect(viewModelData.pairObjects[3]).toEqual({
-      pairLocation: 'normal gen2pair1',
+      pairClass: 'normal gen2pair1',
       people: ['p0018', 'p0019']}
     )
 
     expect(viewModelData.pairObjects[4]).toEqual({
-      pairLocation: 'normal gen3pair0',
+      pairClass: 'normal gen3pair0',
       people: ['p0005', 'p0006']}
     )
 
     expect(viewModelData.pairObjects[5]).toEqual({
-      pairLocation: 'normal gen3pair1',
+      pairClass: 'normal gen3pair1',
       people: ['p0007', 'p0008']}
     )
 
     expect(viewModelData.pairObjects[6]).toEqual({
-      pairLocation: 'normal gen3pair2',
+      pairClass: 'normal gen3pair2',
       people: ['p0020', 'p0021']}
     )
 
     expect(viewModelData.pairObjects[7]).toEqual({
-      pairLocation: 'normal gen3pair3',
+      pairClass: 'normal gen3pair3',
       people: ['p0022', 'p0023']}
     )
 
     expect(viewModelData.pairObjects[8]).toEqual({
-      pairLocation: 'compressed gen4pair0',
+      pairClass: 'compressed gen4pair0',
       people: ['p0009', 'p0010']}
     )
 
     expect(viewModelData.pairObjects[9]).toEqual({
-      pairLocation: 'compressed gen4pair1',
+      pairClass: 'compressed gen4pair1',
       people: ['p0011', 'p0012']}
     )
 
     expect(viewModelData.pairObjects[10]).toEqual({
-      pairLocation: 'compressed gen4pair2',
+      pairClass: 'compressed gen4pair2',
       people: ['p0013', 'p0014']}
     )
 
     expect(viewModelData.pairObjects[11]).toEqual({
-      pairLocation: 'compressed gen4pair3',
+      pairClass: 'compressed gen4pair3',
       people: ['p0015', 'p0016']}
     )
 
     expect(viewModelData.pairObjects[12]).toEqual({
-      pairLocation: 'compressed gen4pair4',
+      pairClass: 'compressed gen4pair4',
       people: ['p0024', 'p0025']}
     )
 
     expect(viewModelData.pairObjects[13]).toEqual({
-      pairLocation: 'compressed gen4pair5',
+      pairClass: 'compressed gen4pair5',
       people: ['p0026', 'p0027']}
     )
 
     expect(viewModelData.pairObjects[14]).toEqual({
-      pairLocation: 'compressed gen4pair6',
+      pairClass: 'compressed gen4pair6',
       people: ['p0028', 'p0029']}
     )
 
     expect(viewModelData.pairObjects[15]).toEqual({
-      pairLocation: 'compressed gen4pair7',
+      pairClass: 'compressed gen4pair7',
       people: ['p0030', 'p0031']}
     )
   })
 
+  test('correctly generates array of connector objects', () => {
+    let viewModelData = viewModelInit(familyTreeData, 'p0001', 5)
+    expect(viewModelData.connectorClasses.length).toBe(15)
+    expect(viewModelData.connectorClasses[0]).toBe('straight parents-of-0-0')
+    expect(viewModelData.connectorClasses[1]).toBe('left parents-of-1-0')
+    expect(viewModelData.connectorClasses[2]).toBe('right parents-of-1-1')
+    expect(viewModelData.connectorClasses[3]).toBe('left parents-of-2-0')
+    expect(viewModelData.connectorClasses[4]).toBe('right parents-of-2-1')
+    expect(viewModelData.connectorClasses[5]).toBe('left parents-of-2-2')
+    expect(viewModelData.connectorClasses[6]).toBe('right parents-of-2-3')
+    expect(viewModelData.connectorClasses[7]).toBe(' straight parents-of-3-0')
+    expect(viewModelData.connectorClasses[8]).toBe(' straight parents-of-3-1')
+    expect(viewModelData.connectorClasses[9]).toBe(' straight parents-of-3-2')
+    expect(viewModelData.connectorClasses[10]).toBe(' straight parents-of-3-3')
+    expect(viewModelData.connectorClasses[11]).toBe(' straight parents-of-3-4')
+    expect(viewModelData.connectorClasses[12]).toBe(' straight parents-of-3-5')
+    expect(viewModelData.connectorClasses[13]).toBe(' straight parents-of-3-6')
+    expect(viewModelData.connectorClasses[14]).toBe(' straight parents-of-3-7')
+  })
 })

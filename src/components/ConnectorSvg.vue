@@ -1,48 +1,33 @@
 <template>
-  <div class="connector-svg" :class="svgSize" id="svg-x">
-    <svg :class="svgSize" height="100%" width="100%">
-      <rect width="100%" height="100%" fill="#eeffff"/>
-      <line x1="0%" y1="0%" x2="0%" y2="50%" stroke="#999999" stroke-width="9"/>
-      <line x1="0%" y1="50%" x2="100%" y2="50%" stroke="#999999" stroke-width="5"/>
-      <line x1="100%" y1="50%" x2="100%" y2="100%" stroke="#999999" stroke-width="9"/>
+  <div class="connector-svg">
+    <svg height="100%" width="100%">
+      <line x1="0%" y1="0%" x2="0%" y2="50%" stroke="#99cc99" stroke-width="4"/>
+      <line x1="0%" y1="50%" x2="100%" y2="50%" stroke="#99cc99" stroke-width="2"/>
+      <line x1="100%" y1="50%" x2="100%" y2="100%" stroke="#99cc99" stroke-width="4"/>
     </svg>
   </div>
 </template>
 
 <script setup>
-import { inject } from 'vue'
+// import { inject } from 'vue'
 
-const svgSize = inject('svgSize')
+// const svgSize = inject('svgSize')
 </script>
 
 <style lang="css">
 .connector-svg {
-  border-color: red;
-  border-style: dotted;
 }
 
-.connector-svg {
-  padding-left: 50px;
-  padding-right: 50px;
+.connector-svg.straight {
 }
 
-div.span-4 {
-  grid-column-start: 2;
-  grid-column-end: 6;
+.connector-svg.left {
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
-svg.span-4 {
-  width: 100%;
-  height: 100%;
-}
-
-div.span-2 {
-  grid-column-start: 2;
-  grid-column-end: 4;
-}
-
-svg.span-2 {
-  width: 100%;
-  height: 100%;
+.connector-svg.right {
+  padding-left: 60px;
+  padding-right: 60px;
 }
 </style>

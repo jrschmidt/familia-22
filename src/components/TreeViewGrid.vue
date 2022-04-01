@@ -3,27 +3,19 @@
     <PersonPair
       v-for="(pair) in pairs"
       v-bind:key="generatePairId(pair)"
-      v-bind:class="pair.pairLocation"
+      v-bind:class="pair.pairClass"
       v-bind:pair="pair"
     />
-    <SvgPlaceholder
-      class="svgrow1"
-    />
-    <SvgPlaceholder
-      class="svgrow2"
-    />
-    <SvgPlaceholder
-      class="svgrow3"
-    />
-    <SvgPlaceholder
-      class="svgrow4"
+    <ConnectorSvg
+      v-for="(connector, index) in connectors"
+      v-bind:class="connectors[index]"
     />
   </div>
 </template>
 
 <script setup>
 import PersonPair from './PersonPair.vue'
-import SvgPlaceholder from './SvgPlaceholder.vue'
+import ConnectorSvg from './ConnectorSvg.vue'
 
 import { viewModelInit } from '../display-data-functions.js'
 
@@ -34,6 +26,7 @@ const familyTreeData = inject('familyTreeData')
 let viewModelData = viewModelInit(familyTreeData, familyTreeData.rootPerson, 5)
 
 const pairs = ref(viewModelData.pairObjects)
+const connectors = ref(viewModelData.connectorClasses)
 
 provide('viewModelData', viewModelData)
 
@@ -139,23 +132,78 @@ const generatePairId = (pair) => {
   grid-row: 1;
 }
 
-.svgrow1 {
-  grid-column: 1 / 17;
-  grid-row: 2;
+.parents-of-0-0 {
+  grid-column: 8 / 10;
+  grid-row: 8;
 }
 
-.svgrow2 {
-  grid-column: 1 / 17;
-  grid-row: 4;
-}
-
-.svgrow3 {
-  grid-column: 1 / 17;
+.parents-of-1-0 {
+  grid-column: 4 / 9;
   grid-row: 6;
 }
 
-.svgrow4 {
-  grid-column: 1 / 17;
-  grid-row: 8;
+.parents-of-1-1 {
+  grid-column: 9 / 14;
+  grid-row: 6;
+}
+
+.parents-of-2-0 {
+  grid-column: 2 / 5;
+  grid-row: 4;
+}
+
+.parents-of-2-1 {
+  grid-column: 5 / 8;
+  grid-row: 4;
+}
+
+.parents-of-2-2 {
+  grid-column: 10 / 13;
+  grid-row: 4;
+}
+
+.parents-of-2-3 {
+  grid-column: 13 / 16;
+  grid-row: 4;
+}
+
+.parents-of-3-0 {
+  grid-column: 1 / 3;
+  grid-row: 2;
+}
+
+.parents-of-3-1 {
+  grid-column: 3 / 5;
+  grid-row: 2;
+}
+
+.parents-of-3-2 {
+  grid-column: 5 / 7;
+  grid-row: 2;
+}
+
+.parents-of-3-3 {
+  grid-column: 7 / 9;
+  grid-row: 2;
+}
+
+.parents-of-3-4 {
+  grid-column: 9 / 11;
+  grid-row: 2;
+}
+
+.parents-of-3-5 {
+  grid-column: 11 / 13;
+  grid-row: 2;
+}
+
+.parents-of-3-6 {
+  grid-column: 13 / 15;
+  grid-row: 2;
+}
+
+.parents-of-3-7 {
+  grid-column: 15 / 17;
+  grid-row: 2;
 }
 </style>

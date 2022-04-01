@@ -27,6 +27,22 @@ const props = defineProps({
   width: 50px;
 }
 
+.normal .person-tag.pt-left {
+  margin-right: 30px;
+}
+
+.normal .person-tag.pt-right {
+  margin-left: 30px;
+}
+
+.compressed .person-tag.pt-left {
+  margin-right: 5px;
+}
+
+.compressed .person-tag.pt-right {
+  margin-left: 5px;
+}
+
 .singleton .person-tag {
   width: 60px;
 }
