@@ -9,6 +9,7 @@
     <ConnectorSvg
       v-for="(connector, index) in connectors"
       v-bind:class="connectors[index]"
+      v-bind:connect-style="getConnectStyle(connectors, index)"
     />
   </div>
 </template>
@@ -30,10 +31,6 @@ const connectors = ref(viewModelData.connectorClasses)
 
 provide('viewModelData', viewModelData)
 
-const notSingleton = (pair) => {
-  return (pair.people.length === 2)
-}
-
 const generatePairId = (pair) => {
   if (pair.people.length === 2)
     return pair.people[0] + pair.people[1]
@@ -41,6 +38,9 @@ const generatePairId = (pair) => {
     return 'singleton' + pair.people[0]
 }
 
+const getConnectStyle = (connectors, index) => {
+  return connectors[index].split(' ')[0]
+}
 </script>
 
 <style lang="css">
@@ -51,6 +51,8 @@ const generatePairId = (pair) => {
   grid-template-columns: 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px;
   grid-template-rows: 30px 30px 30px 30px 30px 30px 30px 30px 30px;
 }
+
+/* Place the PersonPair components in the grid */
 
 .gen0root {
   grid-column: 8 / 10;
@@ -132,78 +134,80 @@ const generatePairId = (pair) => {
   grid-row: 1;
 }
 
+/* Place the ConnectorSvg components in the grid */
+
 .parents-of-0-0 {
   grid-column: 8 / 10;
-  grid-row: 8;
+  grid-row: 7 / 9;
 }
 
 .parents-of-1-0 {
   grid-column: 4 / 9;
-  grid-row: 6;
+  grid-row: 5 / 7;
 }
 
 .parents-of-1-1 {
   grid-column: 9 / 14;
-  grid-row: 6;
+  grid-row: 5 / 7;
 }
 
 .parents-of-2-0 {
   grid-column: 2 / 5;
-  grid-row: 4;
+  grid-row: 3 / 5;
 }
 
 .parents-of-2-1 {
   grid-column: 5 / 8;
-  grid-row: 4;
+  grid-row: 3 / 5;
 }
 
 .parents-of-2-2 {
   grid-column: 10 / 13;
-  grid-row: 4;
+  grid-row: 3 / 5;
 }
 
 .parents-of-2-3 {
   grid-column: 13 / 16;
-  grid-row: 4;
+  grid-row: 3 / 5;
 }
 
 .parents-of-3-0 {
   grid-column: 1 / 3;
-  grid-row: 2;
+  grid-row: 1 / 3;
 }
 
 .parents-of-3-1 {
   grid-column: 3 / 5;
-  grid-row: 2;
+  grid-row: 1 / 3;
 }
 
 .parents-of-3-2 {
   grid-column: 5 / 7;
-  grid-row: 2;
+  grid-row: 1 / 3;
 }
 
 .parents-of-3-3 {
   grid-column: 7 / 9;
-  grid-row: 2;
+  grid-row: 1 / 3;
 }
 
 .parents-of-3-4 {
   grid-column: 9 / 11;
-  grid-row: 2;
+  grid-row: 1 / 3;
 }
 
 .parents-of-3-5 {
   grid-column: 11 / 13;
-  grid-row: 2;
+  grid-row: 1 / 3;
 }
 
 .parents-of-3-6 {
   grid-column: 13 / 15;
-  grid-row: 2;
+  grid-row: 1 / 3;
 }
 
 .parents-of-3-7 {
   grid-column: 15 / 17;
-  grid-row: 2;
+  grid-row: 1 / 3;
 }
 </style>
