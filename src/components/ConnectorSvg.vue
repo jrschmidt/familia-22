@@ -1,41 +1,41 @@
 <template>
   <div class="connector-svg">
-    <svg v-if="isStraightSkinny(connectStyle)" height="60px" width="120px">
-      <line x1="55" y1="15" x2="65" y2="15" stroke="#99cc99" stroke-width="2"/>
-      <line x1="60" y1="15" x2="60" y2="60" stroke="#99cc99" stroke-width="2"/>
+    <svg v-if="isStraightSkinny(connectStyle)" height="100%" width="120px">
+      <line x1="55" y1="30" x2="65" y2="30" stroke="#99cc99" stroke-width="2"/>
+      <line x1="60" y1="30" x2="60" y2="180" stroke="#99cc99" stroke-width="2"/>
     </svg>
 
     <svg v-if="isStraightSingleton(connectStyle)" height="100%" width="100%">
-      <line x1="30" y1="15" x2="90" y2="15" stroke="#99cc99" stroke-width="2"/>
-      <line x1="60" y1="15" x2="60" y2="60" stroke="#99cc99" stroke-width="2"/>
+      <line x1="30" y1="30" x2="90" y2="30" stroke="#99cc99" stroke-width="2"/>
+      <line x1="60" y1="30" x2="60" y2="180" stroke="#99cc99" stroke-width="2"/>
     </svg>
 
     <svg v-if="isLeftW3(connectStyle)" height="100%" width="100%">
-      <line x1="30" y1="15" x2="90" y2="15" stroke="#99cc99" stroke-width="2"/>
-      <line x1="60" y1="15" x2="60" y2="45" stroke="#99cc99" stroke-width="2"/>
-      <line x1="60" y1="45" x2="120" y2="45" stroke="#99cc99" stroke-width="2"/>
-      <line x1="120" y1="45" x2="120" y2="60" stroke="#99cc99" stroke-width="2"/>
+      <line x1="30" y1="30" x2="90" y2="30" stroke="#99cc99" stroke-width="2"/>
+      <line x1="60" y1="30" x2="60" y2="75" stroke="#99cc99" stroke-width="2"/>
+      <line x1="60" y1="75" x2="120" y2="75" stroke="#99cc99" stroke-width="2"/>
+      <line x1="120" y1="75" x2="120" y2="180" stroke="#99cc99" stroke-width="2"/>
     </svg>
 
     <svg v-if="isRightW3(connectStyle)" height="100%" width="100%">
-      <line x1="90" y1="15" x2="150" y2="15" stroke="#99cc99" stroke-width="2"/>
-      <line x1="120" y1="15" x2="120" y2="45" stroke="#99cc99" stroke-width="2"/>
-      <line x1="120" y1="45" x2="60" y2="45" stroke="#99cc99" stroke-width="2"/>
-      <line x1="60" y1="45" x2="60" y2="60" stroke="#99cc99" stroke-width="2"/>
+      <line x1="90" y1="30" x2="150" y2="30" stroke="#99cc99" stroke-width="2"/>
+      <line x1="120" y1="30" x2="120" y2="75" stroke="#99cc99" stroke-width="2"/>
+      <line x1="120" y1="75" x2="60" y2="75" stroke="#99cc99" stroke-width="2"/>
+      <line x1="60" y1="75" x2="60" y2="180" stroke="#99cc99" stroke-width="2"/>
     </svg>
 
     <svg v-if="isLeftW5(connectStyle)" height="100%" width="100%">
-      <line x1="30" y1="15" x2="90" y2="15" stroke="#99cc99" stroke-width="2"/>
-      <line x1="60" y1="15" x2="60" y2="45" stroke="#99cc99" stroke-width="2"/>
-      <line x1="60" y1="45" x2="240" y2="45" stroke="#99cc99" stroke-width="2"/>
-      <line x1="240" y1="45" x2="240" y2="60" stroke="#99cc99" stroke-width="2"/>
+      <line x1="30" y1="30" x2="90" y2="30" stroke="#99cc99" stroke-width="2"/>
+      <line x1="60" y1="30" x2="60" y2="75" stroke="#99cc99" stroke-width="2"/>
+      <line x1="60" y1="75" x2="240" y2="75" stroke="#99cc99" stroke-width="2"/>
+      <line x1="240" y1="75" x2="240" y2="180" stroke="#99cc99" stroke-width="2"/>
     </svg>
 
     <svg v-if="isRightW5(connectStyle)" height="100%" width="100%">
-      <line x1="210" y1="15" x2="270" y2="15" stroke="#99cc99" stroke-width="2"/>
-      <line x1="240" y1="15" x2="240" y2="45" stroke="#99cc99" stroke-width="2"/>
-      <line x1="240" y1="45" x2="60" y2="45" stroke="#99cc99" stroke-width="2"/>
-      <line x1="60" y1="45" x2="60" y2="60" stroke="#99cc99" stroke-width="2"/>
+      <line x1="210" y1="30" x2="270" y2="30" stroke="#99cc99" stroke-width="2"/>
+      <line x1="240" y1="30" x2="240" y2="75" stroke="#99cc99" stroke-width="2"/>
+      <line x1="240" y1="75" x2="60" y2="75" stroke="#99cc99" stroke-width="2"/>
+      <line x1="60" y1="75" x2="60" y2="180" stroke="#99cc99" stroke-width="2"/>
     </svg>
   </div>
 </template>

@@ -1,5 +1,7 @@
 <template>
   <div class="person-tag">
+    <p class="year">{{ getBirthYearLabel(personData) }}</p>
+    <p class="year">{{ getDeathYearLabel(personData) }}</p>
     <p>{{ personData.firstname }}</p>
     <p>{{ personData.lastname }}</p>
   </div>
@@ -9,6 +11,14 @@
 const props = defineProps({
   personData: Object
 })
+
+const getBirthYearLabel = (personData) => {
+  return personData.birthdate ? 'b' + personData.birthdate.slice(-4) : ''
+}
+
+const getDeathYearLabel = (personData) => {
+  return personData.deathdate ? 'd' + personData.deathdate.slice(-4) : ''
+}
 </script>
 
 <style lang="css">
@@ -16,7 +26,15 @@ const props = defineProps({
   background-color: #f0f0ff;
   color: green;
   font-size: 0.6rem;
-  height: 30px;
+  height: 60px;
+}
+
+.person-tag p {
+  margin: 2px;
+}
+
+.person-tag p.year {
+  font-size: 0.5rem;
 }
 
 .normal .person-tag {
@@ -45,9 +63,5 @@ const props = defineProps({
 
 .singleton .person-tag {
   width: 60px;
-}
-
-.person-tag p {
-  margin: 2px;
 }
 </style>

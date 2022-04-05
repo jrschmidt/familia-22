@@ -49,7 +49,7 @@ const getConnectStyle = (connectors, index) => {
   overflow: hidden;
   background-color: #ddeeee;
   grid-template-columns: 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px;
-  grid-template-rows: 30px 30px 30px 30px 30px 30px 30px 30px 30px;
+  grid-template-rows: 60px 30px 60px 30px 60px 30px 60px 30px 60px;
 }
 
 /* Place the PersonPair components in the grid */
