@@ -1,6 +1,6 @@
 <template>
   <div class="tree-view-console">
-    <h5>TreeViewConsole component</h5>
+    <h6>TreeViewConsole component</h6>
     <TreeViewGrid/>
   </div>
 </template>
@@ -19,5 +19,12 @@ provide ('familyTreeData', familyTreeData)
 .tree-view-console {
   border-color: maroon;
   border-style: dotted;
+}
+
+.tree-view-console h6 {
+  margin: 2px 0px 14px 8px;
+  text-align: left;
+  font-size: 0.6rem;
+  color: #999999;
 }
 </style>

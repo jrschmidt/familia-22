@@ -47,9 +47,10 @@ const getConnectStyle = (connectors, index) => {
 .tree-view-grid {
   display: grid;
   overflow: hidden;
-  background-color: #ddeeee;
+  padding: 6px 0px 6px 0px;
+  background-color: #ccddcc;
   grid-template-columns: 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px;
-  grid-template-rows: 60px 30px 60px 30px 60px 30px 60px 30px 60px;
+  grid-template-rows: 50px 30px 50px 30px 50px 30px 50px 30px 50px;
 }
 
 /* Place the PersonPair components in the grid */

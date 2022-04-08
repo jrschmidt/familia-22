@@ -13,11 +13,11 @@ const props = defineProps({
 })
 
 const getBirthYearLabel = (personData) => {
-  return personData.birthdate ? 'b' + personData.birthdate.slice(-4) : ''
+  return personData.birthdate ? 'b' + personData.birthdate.slice(-4) : '-- --'
 }
 
 const getDeathYearLabel = (personData) => {
-  return personData.deathdate ? 'd' + personData.deathdate.slice(-4) : ''
+  return personData.deathdate ? 'd' + personData.deathdate.slice(-4) : '-- --'
 }
 </script>
 
@@ -26,11 +26,13 @@ const getDeathYearLabel = (personData) => {
   background-color: #f0f0ff;
   color: green;
   font-size: 0.6rem;
-  height: 60px;
+  height: 50px;
+  border: 1px solid #666666;
+  border-radius: 8px;
 }
 
 .person-tag p {
-  margin: 2px;
+  margin: 0px;
 }
 
 .person-tag p.year {
