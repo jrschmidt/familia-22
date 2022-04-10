@@ -1,7 +1,7 @@
 import { test, describe, expect } from 'vitest'
 
 import { familyTreeData } from '../family-tree-data.js'
-import { growTree } from '../display-data-functions.js'
+import { growTree } from '../view-model-functions.js'
 
 // This set of sample data represents what the state of the display data
 // might be before the growTree() function is called.

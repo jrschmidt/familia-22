@@ -1,6 +1,6 @@
 import { test, describe, expect } from 'vitest'
 
-import { pairArrayElements } from '../display-data-functions.js'
+import { pairArrayElements } from '../view-model-functions.js'
 
 describe('pairArrayElements function', () => {
 

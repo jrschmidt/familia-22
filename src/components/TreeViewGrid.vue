@@ -18,7 +18,7 @@
 import PersonPair from './PersonPair.vue'
 import ConnectorSvg from './ConnectorSvg.vue'
 
-import { viewModelInit } from '../display-data-functions.js'
+import { viewModelInit } from '../view-model-functions.js'
 
 import { ref, inject, provide } from 'vue'
 

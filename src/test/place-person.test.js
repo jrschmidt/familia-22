@@ -1,6 +1,6 @@
 import { test, describe, expect } from 'vitest'
 
-import { placePerson } from '../display-data-functions.js'
+import { placePerson } from '../view-model-functions.js'
 
 describe('placePerson function', () => {
 

@@ -47,43 +47,45 @@
 // displayed next to each other.
 
 
-export const viewModelInit = (treeData, rootPersonId, generations) => {
-  const pairFixedClasses = [
-      'singleton gen0root',
-      'normal gen1pair0',
-      'normal gen2pair0',
-      'normal gen2pair1',
-      'normal gen3pair0',
-      'normal gen3pair1',
-      'normal gen3pair2',
-      'normal gen3pair3',
-      'compressed gen4pair0',
-      'compressed gen4pair1',
-      'compressed gen4pair2',
-      'compressed gen4pair3',
-      'compressed gen4pair4',
-      'compressed gen4pair5',
-      'compressed gen4pair6',
-      'compressed gen4pair7'
-    ]
+const pairFixedClasses = [
+  'singleton gen0root',
+  'normal gen1pair0',
+  'normal gen2pair0',
+  'normal gen2pair1',
+  'normal gen3pair0',
+  'normal gen3pair1',
+  'normal gen3pair2',
+  'normal gen3pair3',
+  'compressed gen4pair0',
+  'compressed gen4pair1',
+  'compressed gen4pair2',
+  'compressed gen4pair3',
+  'compressed gen4pair4',
+  'compressed gen4pair5',
+  'compressed gen4pair6',
+  'compressed gen4pair7'
+]
 
-  const connectorFixedClasses = [
-    'straight-singleton parents-of-0-0',
-    'left-w5 parents-of-1-0',
-    'right-w5 parents-of-1-1',
-    'left-w3 parents-of-2-0',
-    'right-w3 parents-of-2-1',
-    'left-w3 parents-of-2-2',
-    'right-w3 parents-of-2-3',
-    'straight-skinny parents-of-3-0',
-    'straight-skinny parents-of-3-1',
-    'straight-skinny parents-of-3-2',
-    'straight-skinny parents-of-3-3',
-    'straight-skinny parents-of-3-4',
-    'straight-skinny parents-of-3-5',
-    'straight-skinny parents-of-3-6',
-    'straight-skinny parents-of-3-7'
-  ]
+const connectorFixedClasses = [
+  'straight-singleton parents-of-0-0',
+  'left-w5 parents-of-1-0',
+  'right-w5 parents-of-1-1',
+  'left-w3 parents-of-2-0',
+  'right-w3 parents-of-2-1',
+  'left-w3 parents-of-2-2',
+  'right-w3 parents-of-2-3',
+  'straight-skinny parents-of-3-0',
+  'straight-skinny parents-of-3-1',
+  'straight-skinny parents-of-3-2',
+  'straight-skinny parents-of-3-3',
+  'straight-skinny parents-of-3-4',
+  'straight-skinny parents-of-3-5',
+  'straight-skinny parents-of-3-6',
+  'straight-skinny parents-of-3-7'
+]
+
+
+export const viewModelInit = (treeData, rootPersonId, generations) => {
 
   let viewModelData = {}
   let successStatus = 'success'

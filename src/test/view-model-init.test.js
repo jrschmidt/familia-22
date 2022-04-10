@@ -1,7 +1,7 @@
 import { test, describe, expect } from 'vitest'
 
 import { familyTreeData } from '../family-tree-data.js'
-import { viewModelInit } from '../display-data-functions.js'
+import { viewModelInit } from '../view-model-functions.js'
 
 describe('viewModelInit function', () => {
 
