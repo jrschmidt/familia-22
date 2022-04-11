@@ -32,6 +32,7 @@ const getPersonData = (pair, index) => {
 
 <style lang="css">
 .person-pair {
+  position: absolute;
   display: flex;
   justify-content: center;
 }

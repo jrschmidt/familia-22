@@ -1,37 +1,37 @@
 <template>
   <div class="connector-svg">
-    <svg v-if="isStraightSkinny(connectStyle)" height="100%" width="120px">
+    <svg v-if="isStraightSkinny(connectStyle)" height="80px" width="120px">
       <line x1="55" y1="30" x2="65" y2="30" stroke="#669966" stroke-width="2"/>
       <line x1="60" y1="30" x2="60" y2="180" stroke="#669966" stroke-width="2"/>
     </svg>
 
-    <svg v-if="isStraightSingleton(connectStyle)" height="100%" width="100%">
+    <svg v-if="isStraightSingleton(connectStyle)" height="80px" width="120px">
       <line x1="30" y1="30" x2="90" y2="30" stroke="#669966" stroke-width="2"/>
       <line x1="60" y1="30" x2="60" y2="180" stroke="#669966" stroke-width="2"/>
     </svg>
 
-    <svg v-if="isLeftW3(connectStyle)" height="100%" width="100%">
+    <svg v-if="isLeftW3(connectStyle)" height="80px" width="180px">
       <line x1="30" y1="30" x2="90" y2="30" stroke="#669966" stroke-width="2"/>
       <line x1="60" y1="30" x2="60" y2="75" stroke="#669966" stroke-width="2"/>
       <line x1="60" y1="75" x2="120" y2="75" stroke="#669966" stroke-width="2"/>
       <line x1="120" y1="75" x2="120" y2="180" stroke="#669966" stroke-width="2"/>
     </svg>
 
-    <svg v-if="isRightW3(connectStyle)" height="100%" width="100%">
+    <svg v-if="isRightW3(connectStyle)" height="80px" width="180px">
       <line x1="90" y1="30" x2="150" y2="30" stroke="#669966" stroke-width="2"/>
       <line x1="120" y1="30" x2="120" y2="75" stroke="#669966" stroke-width="2"/>
       <line x1="120" y1="75" x2="60" y2="75" stroke="#669966" stroke-width="2"/>
       <line x1="60" y1="75" x2="60" y2="180" stroke="#669966" stroke-width="2"/>
     </svg>
 
-    <svg v-if="isLeftW5(connectStyle)" height="100%" width="100%">
+    <svg v-if="isLeftW5(connectStyle)" height="80px" width="300px">
       <line x1="30" y1="30" x2="90" y2="30" stroke="#669966" stroke-width="2"/>
       <line x1="60" y1="30" x2="60" y2="75" stroke="#669966" stroke-width="2"/>
       <line x1="60" y1="75" x2="240" y2="75" stroke="#669966" stroke-width="2"/>
       <line x1="240" y1="75" x2="240" y2="180" stroke="#669966" stroke-width="2"/>
     </svg>
 
-    <svg v-if="isRightW5(connectStyle)" height="100%" width="100%">
+    <svg v-if="isRightW5(connectStyle)" height="80px" width="300px">
       <line x1="210" y1="30" x2="270" y2="30" stroke="#669966" stroke-width="2"/>
       <line x1="240" y1="30" x2="240" y2="75" stroke="#669966" stroke-width="2"/>
       <line x1="240" y1="75" x2="60" y2="75" stroke="#669966" stroke-width="2"/>
@@ -90,6 +90,7 @@ const isRightW5 = (connectStyle) => {
 
 <style lang="css">
 .connector-svg {
+  position: absolute;
 }
 
 .connector-svg.straight {

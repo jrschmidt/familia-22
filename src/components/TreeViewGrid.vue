@@ -45,170 +45,170 @@ const getConnectStyle = (connectors, index) => {
 
 <style lang="css">
 .tree-view-grid {
-  display: grid;
+  display: block;
   overflow: hidden;
+  height: 370px;
+  width: 960px;
   padding: 6px 0px 6px 0px;
-  background-color: #ccddcc;
-  grid-template-columns: 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px;
-  grid-template-rows: 50px 30px 50px 30px 50px 30px 50px 30px 50px;
+  background-color: #e0e4e0;
 }
 
-/* Place the PersonPair components in the grid */
+/* Positioning for the PersonPair components */
 
-.gen0root {
-  grid-column: 8 / 10;
-  grid-row: 9;
+.person-pair.gen0root {
+  left: 430px;
+  top: 320px;
 }
 
-.gen1pair0 {
-  grid-column: 7 / 11;
-  grid-row: 7;
+.person-pair.gen1pair0 {
+  left: 360px;
+  top: 240px;
 }
 
-.gen2pair0 {
-  grid-column: 3 / 7;
-  grid-row: 5;
+.person-pair.gen2pair0 {
+  left: 120px;
+  top: 160px;
 }
 
-.gen2pair1 {
-  grid-column: 11 / 15;
-  grid-row: 5;
+.person-pair.gen2pair1 {
+  left: 600px;
+  top: 160px;
 }
 
-.gen3pair0 {
-  grid-column: 1 / 5;
-  grid-row: 3;
+.person-pair.gen3pair0 {
+  left: 0px;
+  top: 80px;
 }
 
-.gen3pair1 {
-  grid-column: 5 / 9;
-  grid-row: 3;
+.person-pair.gen3pair1 {
+  left: 240px;
+  top: 80px;
 }
 
-.gen3pair2 {
-  grid-column: 9 / 13;
-  grid-row: 3;
+.person-pair.gen3pair2 {
+  left: 480px;
+  top: 80px;
 }
 
-.gen3pair3 {
-  grid-column: 13 / 17;
-  grid-row: 3;
+.person-pair.gen3pair3 {
+  left: 720px;
+  top: 80px;
 }
 
-.gen4pair0 {
-  grid-column: 1 / 3;
-  grid-row: 1;
+.person-pair.gen4pair0 {
+  left: 0px;
+  top: 0px;
 }
 
-.gen4pair1 {
-  grid-column: 3 / 5;
-  grid-row: 1;
+.person-pair.gen4pair1 {
+  left: 120px;
+  top: 0px;
 }
 
-.gen4pair2 {
-  grid-column: 5 / 7;
-  grid-row: 1;
+.person-pair.gen4pair2 {
+  left: 240px;
+  top: 0px;
 }
 
-.gen4pair3 {
-  grid-column: 7 / 9;
-  grid-row: 1;
+.person-pair.gen4pair3 {
+  left: 360px;
+  top: 0px;
 }
 
-.gen4pair4 {
-  grid-column: 9 / 11;
-  grid-row: 1;
+.person-pair.gen4pair4 {
+  left: 480px;
+  top: 0px;
 }
 
-.gen4pair5 {
-  grid-column: 11 / 13;
-  grid-row: 1;
+.person-pair.gen4pair5 {
+  left: 600px;
+  top: 0px;
 }
 
-.gen4pair6 {
-  grid-column: 13 / 15;
-  grid-row: 1;
+.person-pair.gen4pair6 {
+  left: 720px;
+  top: 0px;
 }
 
-.gen4pair7 {
-  grid-column: 15 / 17;
-  grid-row: 1;
+.person-pair.gen4pair7 {
+  left: 840px;
+  top: 0px;
 }
 
-/* Place the ConnectorSvg components in the grid */
+/* Positioning for the ConnectorSvg components */
 
-.parents-of-0-0 {
-  grid-column: 8 / 10;
-  grid-row: 7 / 9;
+.connector-svg.parents-of-0-0 {
+  left: 420px;
+  top: 240px;
 }
 
-.parents-of-1-0 {
-  grid-column: 4 / 9;
-  grid-row: 5 / 7;
+.connector-svg.parents-of-1-0 {
+  left: 180px;
+  top: 160px;
 }
 
-.parents-of-1-1 {
-  grid-column: 9 / 14;
-  grid-row: 5 / 7;
+.connector-svg.parents-of-1-1 {
+  left: 480px;
+  top: 160px;
 }
 
-.parents-of-2-0 {
-  grid-column: 2 / 5;
-  grid-row: 3 / 5;
+.connector-svg.parents-of-2-0 {
+  left: 60px;
+  top: 80px;
 }
 
-.parents-of-2-1 {
-  grid-column: 5 / 8;
-  grid-row: 3 / 5;
+.connector-svg.parents-of-2-1 {
+  left: 240px;
+  top: 80px;
 }
 
-.parents-of-2-2 {
-  grid-column: 10 / 13;
-  grid-row: 3 / 5;
+.connector-svg.parents-of-2-2 {
+  left: 540px;
+  top: 80px;
 }
 
-.parents-of-2-3 {
-  grid-column: 13 / 16;
-  grid-row: 3 / 5;
+.connector-svg.parents-of-2-3 {
+  left: 720px;
+  top: 80px;
 }
 
-.parents-of-3-0 {
-  grid-column: 1 / 3;
-  grid-row: 1 / 3;
+.connector-svg.parents-of-3-0 {
+  left: 0px;
+  top: 0px;
 }
 
-.parents-of-3-1 {
-  grid-column: 3 / 5;
-  grid-row: 1 / 3;
+.connector-svg.parents-of-3-1 {
+  left: 120px;
+  top: 0px;
 }
 
-.parents-of-3-2 {
-  grid-column: 5 / 7;
-  grid-row: 1 / 3;
+.connector-svg.parents-of-3-2 {
+  left: 240px;
+  top: 0px;
 }
 
-.parents-of-3-3 {
-  grid-column: 7 / 9;
-  grid-row: 1 / 3;
+.connector-svg.parents-of-3-3 {
+  left: 360px;
+  top: 0px;
 }
 
-.parents-of-3-4 {
-  grid-column: 9 / 11;
-  grid-row: 1 / 3;
+.connector-svg.parents-of-3-4 {
+  left: 480px;
+  top: 0px;
 }
 
-.parents-of-3-5 {
-  grid-column: 11 / 13;
-  grid-row: 1 / 3;
+.connector-svg.parents-of-3-5 {
+  left: 600px;
+  top: 0px;
 }
 
-.parents-of-3-6 {
-  grid-column: 13 / 15;
-  grid-row: 1 / 3;
+.connector-svg.parents-of-3-6 {
+  left: 720px;
+  top: 0px;
 }
 
-.parents-of-3-7 {
-  grid-column: 15 / 17;
-  grid-row: 1 / 3;
+.connector-svg.parents-of-3-7 {
+  left: 840px;
+  top: 0px;
 }
 </style>
