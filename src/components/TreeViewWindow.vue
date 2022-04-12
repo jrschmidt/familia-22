@@ -46,7 +46,7 @@ const getConnectStyle = (connectors, index) => {
 <style lang="css">
 .tree-view-window {
   position: relative;
-  height: 370px;
+  height: 470px;
   width: 960px;
   border: 0;
   background-color: #e0e4e0;
@@ -55,159 +55,159 @@ const getConnectStyle = (connectors, index) => {
 /* Positioning for the PersonPair components */
 
 .person-pair.gen0root {
-  left: 430px;
-  top: 320px;
+  left: 420px;
+  top: 410px;
 }
 
 .person-pair.gen1pair0 {
   left: 360px;
-  top: 240px;
+  top: 310px;
 }
 
 .person-pair.gen2pair0 {
   left: 120px;
-  top: 160px;
+  top: 210px;
 }
 
 .person-pair.gen2pair1 {
   left: 600px;
-  top: 160px;
+  top: 210px;
 }
 
 .person-pair.gen3pair0 {
   left: 0px;
-  top: 80px;
+  top: 110px;
 }
 
 .person-pair.gen3pair1 {
   left: 240px;
-  top: 80px;
+  top: 110px;
 }
 
 .person-pair.gen3pair2 {
   left: 480px;
-  top: 80px;
+  top: 110px;
 }
 
 .person-pair.gen3pair3 {
   left: 720px;
-  top: 80px;
+  top: 110px;
 }
 
 .person-pair.gen4pair0 {
   left: 0px;
-  top: 0px;
+  top: 10px;
 }
 
 .person-pair.gen4pair1 {
   left: 120px;
-  top: 0px;
+  top: 10px;
 }
 
 .person-pair.gen4pair2 {
   left: 240px;
-  top: 0px;
+  top: 10px;
 }
 
 .person-pair.gen4pair3 {
   left: 360px;
-  top: 0px;
+  top: 10px;
 }
 
 .person-pair.gen4pair4 {
   left: 480px;
-  top: 0px;
+  top: 10px;
 }
 
 .person-pair.gen4pair5 {
   left: 600px;
-  top: 0px;
+  top: 10px;
 }
 
 .person-pair.gen4pair6 {
   left: 720px;
-  top: 0px;
+  top: 10px;
 }
 
 .person-pair.gen4pair7 {
   left: 840px;
-  top: 0px;
+  top: 10px;
 }
 
 /* Positioning for the ConnectorSvg components */
 
 .connector-svg.parents-of-0-0 {
   left: 420px;
-  top: 240px;
+  top: 310px;
 }
 
 .connector-svg.parents-of-1-0 {
   left: 180px;
-  top: 160px;
+  top: 210px;
 }
 
 .connector-svg.parents-of-1-1 {
   left: 480px;
-  top: 160px;
+  top: 210px;
 }
 
 .connector-svg.parents-of-2-0 {
   left: 60px;
-  top: 80px;
+  top: 110px;
 }
 
 .connector-svg.parents-of-2-1 {
   left: 240px;
-  top: 80px;
+  top: 110px;
 }
 
 .connector-svg.parents-of-2-2 {
   left: 540px;
-  top: 80px;
+  top: 110px;
 }
 
 .connector-svg.parents-of-2-3 {
   left: 720px;
-  top: 80px;
+  top: 110px;
 }
 
 .connector-svg.parents-of-3-0 {
   left: 0px;
-  top: 0px;
+  top: 10px;
 }
 
 .connector-svg.parents-of-3-1 {
   left: 120px;
-  top: 0px;
+  top: 10px;
 }
 
 .connector-svg.parents-of-3-2 {
   left: 240px;
-  top: 0px;
+  top: 10px;
 }
 
 .connector-svg.parents-of-3-3 {
   left: 360px;
-  top: 0px;
+  top: 10px;
 }
 
 .connector-svg.parents-of-3-4 {
   left: 480px;
-  top: 0px;
+  top: 10px;
 }
 
 .connector-svg.parents-of-3-5 {
   left: 600px;
-  top: 0px;
+  top: 10px;
 }
 
 .connector-svg.parents-of-3-6 {
   left: 720px;
-  top: 0px;
+  top: 10px;
 }
 
 .connector-svg.parents-of-3-7 {
   left: 840px;
-  top: 0px;
+  top: 10px;
 }
 </style>
