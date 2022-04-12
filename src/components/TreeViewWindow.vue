@@ -1,5 +1,5 @@
 <template>
-  <div class="tree-view-grid">
+  <div class="tree-view-window">
     <PersonPair
       v-for="(pair) in pairs"
       v-bind:key="generatePairId(pair)"
@@ -44,12 +44,11 @@ const getConnectStyle = (connectors, index) => {
 </script>
 
 <style lang="css">
-.tree-view-grid {
-  display: block;
-  overflow: hidden;
+.tree-view-window {
+  position: relative;
   height: 370px;
   width: 960px;
-  padding: 6px 0px 6px 0px;
+  border: 0;
   background-color: #e0e4e0;
 }
 
