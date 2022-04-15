@@ -48,42 +48,42 @@ describe('treeShiftToFather function', () => {
     expect(viewModelData.pairObjects.length).toEqual(16)
 
     expect(viewModelData.pairObjects[0]).toEqual({
-      pairClass: 'singleton gen0root',
+      pairClass: 'singleton gen0root moving',
       people: ['p0002']}
     )
 
     expect(viewModelData.pairObjects[1]).toEqual({
-      pairClass: 'normal gen1pair0',
+      pairClass: 'normal gen1pair0 moving',
       people: ['p0003', 'p0004']}
     )
 
     expect(viewModelData.pairObjects[2]).toEqual({
-      pairClass: 'normal gen2pair0',
+      pairClass: 'normal gen2pair0 moving',
       people: ['p0005', 'p0006']}
     )
 
     expect(viewModelData.pairObjects[3]).toEqual({
-      pairClass: 'normal gen2pair1',
+      pairClass: 'normal gen2pair1 moving',
       people: ['p0007', 'p0008']}
     )
 
     expect(viewModelData.pairObjects[4]).toEqual({
-      pairClass: 'normal gen3pair0',
+      pairClass: 'normal gen3pair0 moving',
       people: ['p0009', 'p0010']}
     )
 
     expect(viewModelData.pairObjects[5]).toEqual({
-      pairClass: 'normal gen3pair1',
+      pairClass: 'normal gen3pair1 moving',
       people: ['p0011', 'p0012']}
     )
 
     expect(viewModelData.pairObjects[6]).toEqual({
-      pairClass: 'normal gen3pair2',
+      pairClass: 'normal gen3pair2 moving',
       people: ['p0013', 'p0014']}
     )
 
     expect(viewModelData.pairObjects[7]).toEqual({
-      pairClass: 'normal gen3pair3',
+      pairClass: 'normal gen3pair3 moving',
       people: ['p0015', 'p0016']}
     )
 
@@ -125,6 +125,46 @@ describe('treeShiftToFather function', () => {
     expect(viewModelData.pairObjects[15]).toEqual({
       pairClass: 'compressed gen4pair7',
       people: ['p0515', 'p0516']}
+    )
+
+    expect(viewModelData.pairObjects[16]).toEqual({
+      pairClass: 'singleton leaving',
+      people: ['p0001']}
+    )
+
+    expect(viewModelData.pairObjects[17]).toEqual({
+      pairClass: 'normal leaving',
+      people: ['p0018', 'p0019']}
+    )
+
+    expect(viewModelData.pairObjects[18]).toEqual({
+      pairClass: 'normal leaving',
+      people: ['p0020', 'p0021']}
+    )
+
+    expect(viewModelData.pairObjects[19]).toEqual({
+      pairClass: 'normal leaving',
+      people: ['p0022', 'p0023']}
+    )
+
+    expect(viewModelData.pairObjects[20]).toEqual({
+      pairClass: 'compressed leaving',
+      people: ['p0024', 'p0025']}
+    )
+
+    expect(viewModelData.pairObjects[21]).toEqual({
+      pairClass: 'compressed leaving',
+      people: ['p0026', 'p0027']}
+    )
+
+    expect(viewModelData.pairObjects[22]).toEqual({
+      pairClass: 'compressed leaving',
+      people: ['p0028', 'p0029']}
+    )
+
+    expect(viewModelData.pairObjects[23]).toEqual({
+      pairClass: 'compressed leaving',
+      people: ['p0030', 'p0031']}
     )
   })
 
