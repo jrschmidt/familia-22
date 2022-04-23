@@ -47,24 +47,158 @@
 // displayed next to each other.
 
 
-const pairFixedClasses = [
-  'singleton gen0root',
-  'normal gen1pair0',
-  'normal gen2pair0',
-  'normal gen2pair1',
-  'normal gen3pair0',
-  'normal gen3pair1',
-  'normal gen3pair2',
-  'normal gen3pair3',
-  'compressed gen4pair0',
-  'compressed gen4pair1',
-  'compressed gen4pair2',
-  'compressed gen4pair3',
-  'compressed gen4pair4',
-  'compressed gen4pair5',
-  'compressed gen4pair6',
-  'compressed gen4pair7'
+const pairLocationLabels = [
+  'gen0root',
+  'gen1pair0',
+  'gen2pair0',
+  'gen2pair1',
+  'gen3pair0',
+  'gen3pair1',
+  'gen3pair2',
+  'gen3pair3',
+  'gen4pair0',
+  'gen4pair1',
+  'gen4pair2',
+  'gen4pair3',
+  'gen4pair4',
+  'gen4pair5',
+  'gen4pair6',
+  'gen4pair7',
 ]
+
+const ghostPairLabels = [
+  'ghost0',
+  'ghost1',
+  'ghost2',
+  'ghost3',
+  'ghost4',
+  'ghost5',
+  'ghost6',
+  'ghost7'
+]
+
+const ghostPairObjects = ghostPairLabels.map( (label) => {
+  return {
+    classes: ['ghost', label],
+    label: label,
+    people: []
+  }
+})
+
+const graphOfPairLocations = {
+  gen0root: {
+    parentsOfMaleLocation: 'gen1pair0',
+    parentsOfFemaleLocation: 'gen1pair0',
+    childLocation: null,
+    classes: ['singleton', 'gen0root']
+  },
+
+  gen1pair0: {
+    parentsOfMaleLocation: 'gen2pair0',
+    parentsOfFemaleLocation: 'gen2pair1',
+    childLocation: 'gen0root',
+    classes: ['normal', 'gen1pair0']
+  },
+
+  gen2pair0: {
+    parentsOfMaleLocation: 'gen3pair0',
+    parentsOfFemaleLocation: 'gen3pair1',
+    childLocation: 'gen1pair0',
+    classes: ['normal', 'gen2pair0']
+  },
+
+  gen2pair1: {
+    parentsOfMaleLocation: 'gen3pair2',
+    parentsOfFemaleLocation: 'gen3pair3',
+    childLocation: 'gen1pair0',
+    classes: ['normal', 'gen2pair1']
+  },
+
+  gen3pair0: {
+    parentsOfMaleLocation: 'gen4pair0',
+    parentsOfFemaleLocation: 'gen4pair1',
+    childLocation: 'gen2pair0',
+    classes: ['normal', 'gen3pair0']
+  },
+
+  gen3pair1: {
+    parentsOfMaleLocation: 'gen4pair2',
+    parentsOfFemaleLocation: 'gen4pair3',
+    childLocation: 'gen2pair0',
+    classes: ['normal', 'gen3pair1']
+  },
+
+  gen3pair2: {
+    parentsOfMaleLocation: 'gen4pair4',
+    parentsOfFemaleLocation: 'gen4pair5',
+    childLocation: 'gen2pair1',
+    classes: ['normal', 'gen3pair2']
+  },
+
+  gen3pair3: {
+    parentsOfMaleLocation: 'gen4pair6',
+    parentsOfFemaleLocation: 'gen4pair7',
+    childLocation: 'gen2pair1',
+    classes: ['normal', 'gen3pair3']
+  },
+
+  gen4pair0: {
+    parentsOfMaleLocation: null,
+    parentsOfFemaleLocation: null,
+    childLocation: 'gen3pair0',
+    classes: ['compressed', 'gen4pair0']
+  },
+
+  gen4pair1: {
+    parentsOfMaleLocation: null,
+    parentsOfFemaleLocation: null,
+    childLocation: 'gen3pair0',
+    classes: ['compressed', 'gen4pair1']
+  },
+
+  gen4pair2: {
+    parentsOfMaleLocation: null,
+    parentsOfFemaleLocation: null,
+    childLocation: 'gen3pair1',
+    classes: ['compressed', 'gen4pair2']
+  },
+
+  gen4pair3: {
+    parentsOfMaleLocation: null,
+    parentsOfFemaleLocation: null,
+    childLocation: 'gen3pair1',
+    classes: ['compressed', 'gen4pair3']
+  },
+
+  gen4pair4: {
+    parentsOfMaleLocation: null,
+    parentsOfFemaleLocation: null,
+    childLocation: 'gen3pair2',
+    classes: ['compressed', 'gen4pair4']
+  },
+
+  gen4pair5: {
+    parentsOfMaleLocation: null,
+    parentsOfFemaleLocation: null,
+    childLocation: 'gen3pair2',
+    classes: ['compressed', 'gen4pair5']
+  },
+
+  gen4pair6: {
+    parentsOfMaleLocation: null,
+    parentsOfFemaleLocation: null,
+    childLocation: 'gen3pair3',
+    classes: ['compressed', 'gen4pair6']
+  },
+
+  gen4pair7: {
+    parentsOfMaleLocation: null,
+    parentsOfFemaleLocation: null,
+    childLocation: 'gen3pair3',
+    classes: ['compressed', 'gen4pair7']
+  }
+
+}
 
 const connectorFixedClasses = [
   'straight-singleton parents-of-0-0',
@@ -85,8 +219,7 @@ const connectorFixedClasses = [
 ]
 
 
-export const viewModelInit = (treeData, rootPersonId, generations) => {
-
+export const viewModelInit = (familyTreeData, rootPersonId, generations) => {
   let viewModelData = {}
   let successStatus = 'success'
 
@@ -99,7 +232,7 @@ export const viewModelInit = (treeData, rootPersonId, generations) => {
   viewModelData.rows = [ [], [], [], [], [] ]
 
   growTree(
-    treeData,
+    familyTreeData,
     viewModelData,
     rootPersonId,
     0,
@@ -107,13 +240,17 @@ export const viewModelInit = (treeData, rootPersonId, generations) => {
   )
 
   let pairsFlat = viewModelData.rows.flat()
+
   viewModelData.pairObjects = pairsFlat.map((pair, index) => {
+    let label = pairLocationLabels[index]
     return {
-      pairClass: pairFixedClasses[index],
-      people: pair
-    }
+       label: label,
+       classes: graphOfPairLocations[label].classes,
+       people: pair
+     }
   })
 
+  viewModelData.pairObjects = viewModelData.pairObjects.concat(ghostPairObjects)
   viewModelData.connectorClasses = [...connectorFixedClasses]
 
   viewModelData.result = successStatus
@@ -122,7 +259,7 @@ export const viewModelInit = (treeData, rootPersonId, generations) => {
 
 
 export const growTree = (
-  treeData,
+  familyTreeData,
   viewModelData,
   startPerson,
   subtreeStartGeneration,
@@ -132,17 +269,17 @@ export const growTree = (
 
   if (subtreeStartGeneration != endGeneration) {
     growTree(
-      treeData,
+      familyTreeData,
       viewModelData,
-      treeData[startPerson].fatherId,
+      familyTreeData[startPerson].fatherId,
       subtreeStartGeneration + 1,
       endGeneration
     )
 
     growTree(
-      treeData,
+      familyTreeData,
       viewModelData,
-      treeData[startPerson].motherId,
+      familyTreeData[startPerson].motherId,
       subtreeStartGeneration + 1,
       endGeneration
     )
@@ -151,16 +288,16 @@ export const growTree = (
 }
 
 
-export const placePerson = (row, item) => {
+export const placePerson = (row, person) => {
   if (row.length === 0) {
-    row.push( [item] )
+    row.push( [person] )
   }
   else {
     let index = row.length -1
     if (row[index].length === 1)
-      row[index].push(item)
+      row[index].push(person)
     else
-      row.push( [item] )
+      row.push( [person] )
   }
 }
 
