@@ -66,139 +66,167 @@ const pairLocationLabels = [
   'gen4pair7',
 ]
 
-const ghostPairLabels = [
-  'ghost0',
-  'ghost1',
-  'ghost2',
-  'ghost3',
-  'ghost4',
-  'ghost5',
-  'ghost6',
-  'ghost7'
-]
-
-const ghostPairObjects = ghostPairLabels.map( (label) => {
-  return {
-    classes: ['ghost', label],
-    label: label,
-    people: []
-  }
-})
-
 const graphOfPairLocations = {
   gen0root: {
     parentsOfMaleLocation: 'gen1pair0',
     parentsOfFemaleLocation: 'gen1pair0',
     childLocation: null,
-    classes: ['singleton', 'gen0root']
+    classes: ['static', 'singleton', 'gen0root']
   },
 
   gen1pair0: {
     parentsOfMaleLocation: 'gen2pair0',
     parentsOfFemaleLocation: 'gen2pair1',
     childLocation: 'gen0root',
-    classes: ['normal', 'gen1pair0']
+    classes: ['static', 'normal', 'gen1pair0']
   },
 
   gen2pair0: {
     parentsOfMaleLocation: 'gen3pair0',
     parentsOfFemaleLocation: 'gen3pair1',
     childLocation: 'gen1pair0',
-    classes: ['normal', 'gen2pair0']
+    classes: ['static', 'normal', 'gen2pair0']
   },
 
   gen2pair1: {
     parentsOfMaleLocation: 'gen3pair2',
     parentsOfFemaleLocation: 'gen3pair3',
     childLocation: 'gen1pair0',
-    classes: ['normal', 'gen2pair1']
+    classes: ['static', 'normal', 'gen2pair1']
   },
 
   gen3pair0: {
     parentsOfMaleLocation: 'gen4pair0',
     parentsOfFemaleLocation: 'gen4pair1',
     childLocation: 'gen2pair0',
-    classes: ['normal', 'gen3pair0']
+    classes: ['static', 'normal', 'gen3pair0']
   },
 
   gen3pair1: {
     parentsOfMaleLocation: 'gen4pair2',
     parentsOfFemaleLocation: 'gen4pair3',
     childLocation: 'gen2pair0',
-    classes: ['normal', 'gen3pair1']
+    classes: ['static', 'normal', 'gen3pair1']
   },
 
   gen3pair2: {
     parentsOfMaleLocation: 'gen4pair4',
     parentsOfFemaleLocation: 'gen4pair5',
     childLocation: 'gen2pair1',
-    classes: ['normal', 'gen3pair2']
+    classes: ['static', 'normal', 'gen3pair2']
   },
 
   gen3pair3: {
     parentsOfMaleLocation: 'gen4pair6',
     parentsOfFemaleLocation: 'gen4pair7',
     childLocation: 'gen2pair1',
-    classes: ['normal', 'gen3pair3']
+    classes: ['static', 'normal', 'gen3pair3']
   },
 
   gen4pair0: {
     parentsOfMaleLocation: null,
     parentsOfFemaleLocation: null,
     childLocation: 'gen3pair0',
-    classes: ['compressed', 'gen4pair0']
+    classes: ['static', 'compressed', 'gen4pair0']
   },
 
   gen4pair1: {
     parentsOfMaleLocation: null,
     parentsOfFemaleLocation: null,
     childLocation: 'gen3pair0',
-    classes: ['compressed', 'gen4pair1']
+    classes: ['static', 'compressed', 'gen4pair1']
   },
 
   gen4pair2: {
     parentsOfMaleLocation: null,
     parentsOfFemaleLocation: null,
     childLocation: 'gen3pair1',
-    classes: ['compressed', 'gen4pair2']
+    classes: ['static', 'compressed', 'gen4pair2']
   },
 
   gen4pair3: {
     parentsOfMaleLocation: null,
     parentsOfFemaleLocation: null,
     childLocation: 'gen3pair1',
-    classes: ['compressed', 'gen4pair3']
+    classes: ['static', 'compressed', 'gen4pair3']
   },
 
   gen4pair4: {
     parentsOfMaleLocation: null,
     parentsOfFemaleLocation: null,
     childLocation: 'gen3pair2',
-    classes: ['compressed', 'gen4pair4']
+    classes: ['static', 'compressed', 'gen4pair4']
   },
 
   gen4pair5: {
     parentsOfMaleLocation: null,
     parentsOfFemaleLocation: null,
     childLocation: 'gen3pair2',
-    classes: ['compressed', 'gen4pair5']
+    classes: ['static', 'compressed', 'gen4pair5']
   },
 
   gen4pair6: {
     parentsOfMaleLocation: null,
     parentsOfFemaleLocation: null,
     childLocation: 'gen3pair3',
-    classes: ['compressed', 'gen4pair6']
+    classes: ['static', 'compressed', 'gen4pair6']
   },
 
   gen4pair7: {
     parentsOfMaleLocation: null,
     parentsOfFemaleLocation: null,
     childLocation: 'gen3pair3',
-    classes: ['compressed', 'gen4pair7']
+    classes: ['static', 'compressed', 'gen4pair7']
   }
 
 }
+
+export const getGhostPairObjects = () => {
+  const inside = pairLocationLabels.map( (tag) => {
+    let label = tag + 'ghost'
+    return {
+      label: label,
+      classes: ['ghost', tag, 'no-show'],
+      people: []
+    }
+  })
+
+  const outside = [
+    'ghost0',
+    'ghost1',
+    'ghost2',
+    'ghost3',
+    'ghost4',
+    'ghost5',
+    'ghost6',
+    'ghost7'
+  ].map( (tag) => {
+    return {
+      label: tag,
+      classes: ['ghost', tag, 'no-show'],
+      people: []
+    }
+  })
+
+  return inside.concat(outside)
+}
+
+const ghostPairObjects = getGhostPairObjects()
+
+
+
+// const ghostPairObjects = ghostPairLabels.map( (label) => {
+//   return {
+//     label: label,
+//     classes: ['ghost', label],
+//     people: []
+//   }
+// })
+
+
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
 
 const connectorFixedClasses = [
   'straight-singleton parents-of-0-0',
@@ -256,6 +284,50 @@ export const viewModelInit = (familyTreeData, rootPersonId, generations) => {
   viewModelData.result = successStatus
   return viewModelData
 }
+
+
+
+// ----****----    ----****----    ----****----    ----****----    ----****----    //
+// ----****----    ----****----    ----****----    ----****----    ----****----    //
+
+
+export const treeShiftToFather = (viewModelData, familyTreeData) => {
+
+// ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? //
+
+
+  // viewModelData.rows = [ [], [], [], [], [] ]
+  //
+  // growTree(
+  //   familyTreeData,
+  //   viewModelData,
+  //   rootPersonId,
+  //   0,
+  //   generations - 1
+  // )
+  //
+  // let pairsFlat = viewModelData.rows.flat()
+  //
+  // viewModelData.pairObjects = pairsFlat.map((pair, index) => {
+  //   let label = pairLocationLabels[index]
+  //   return {
+  //      label: label,
+  //      classes: graphOfPairLocations[label].classes,
+  //      people: pair
+  //    }
+  // })
+  //
+  // viewModelData.pairObjects = viewModelData.pairObjects.concat(ghostPairObjects)
+  // viewModelData.connectorClasses = [...connectorFixedClasses]
+  //
+  // viewModelData.result = successStatus
+  // return viewModelData
+}
+
+
+// ----****----    ----****----    ----****----    ----****----    ----****----    //
+// ----****----    ----****----    ----****----    ----****----    ----****----    //
+
 
 
 export const growTree = (

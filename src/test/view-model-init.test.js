@@ -31,12 +31,12 @@ describe('viewModelInit function', () => {
   test('correctly generates the array of people pair data', () => {
     let viewModelData = viewModelInit(familyTreeData, 'p0001', 5)
 
-    expect(viewModelData.pairObjects.length).toBe(24)
+    expect(viewModelData.pairObjects.length).toBe(40)
 
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'gen0root',
-        classes: ['singleton', 'gen0root'],
+        classes: ['static', 'singleton', 'gen0root'],
         people: ['p0001']
       }
     )
@@ -44,7 +44,7 @@ describe('viewModelInit function', () => {
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'gen1pair0',
-        classes: ['normal', 'gen1pair0'],
+        classes: ['static', 'normal', 'gen1pair0'],
         people: ['p0002', 'p0017']
       }
     )
@@ -52,7 +52,7 @@ describe('viewModelInit function', () => {
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'gen2pair0',
-        classes: ['normal', 'gen2pair0'],
+        classes: ['static', 'normal', 'gen2pair0'],
         people: ['p0003', 'p0004']
       }
     )
@@ -60,7 +60,7 @@ describe('viewModelInit function', () => {
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'gen2pair1',
-        classes: ['normal', 'gen2pair1'],
+        classes: ['static', 'normal', 'gen2pair1'],
         people: ['p0018', 'p0019']
       }
     )
@@ -68,7 +68,7 @@ describe('viewModelInit function', () => {
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'gen3pair0',
-        classes: ['normal', 'gen3pair0'],
+        classes: ['static', 'normal', 'gen3pair0'],
         people: ['p0005', 'p0006']
       }
     )
@@ -76,7 +76,7 @@ describe('viewModelInit function', () => {
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'gen3pair1',
-        classes: ['normal', 'gen3pair1'],
+        classes: ['static', 'normal', 'gen3pair1'],
         people: ['p0007', 'p0008']
       }
     )
@@ -84,7 +84,7 @@ describe('viewModelInit function', () => {
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'gen3pair2',
-        classes: ['normal', 'gen3pair2'],
+        classes: ['static', 'normal', 'gen3pair2'],
         people: ['p0020', 'p0021']
       }
     )
@@ -92,7 +92,7 @@ describe('viewModelInit function', () => {
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'gen3pair3',
-        classes: ['normal', 'gen3pair3'],
+        classes: ['static', 'normal', 'gen3pair3'],
         people: ['p0022', 'p0023']
       }
     )
@@ -100,7 +100,7 @@ describe('viewModelInit function', () => {
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'gen4pair0',
-        classes: ['compressed', 'gen4pair0'],
+        classes: ['static', 'compressed', 'gen4pair0'],
         people: ['p0009', 'p0010']
       }
     )
@@ -108,7 +108,7 @@ describe('viewModelInit function', () => {
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'gen4pair1',
-        classes: ['compressed', 'gen4pair1'],
+        classes: ['static', 'compressed', 'gen4pair1'],
         people: ['p0011', 'p0012']
       }
     )
@@ -116,7 +116,7 @@ describe('viewModelInit function', () => {
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'gen4pair2',
-        classes: ['compressed', 'gen4pair2'],
+        classes: ['static', 'compressed', 'gen4pair2'],
         people: ['p0013', 'p0014']
       }
     )
@@ -124,7 +124,7 @@ describe('viewModelInit function', () => {
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'gen4pair3',
-        classes: ['compressed', 'gen4pair3'],
+        classes: ['static', 'compressed', 'gen4pair3'],
         people: ['p0015', 'p0016']
       }
     )
@@ -132,7 +132,7 @@ describe('viewModelInit function', () => {
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'gen4pair4',
-        classes: ['compressed', 'gen4pair4'],
+        classes: ['static', 'compressed', 'gen4pair4'],
         people: ['p0024', 'p0025']
       }
     )
@@ -140,7 +140,7 @@ describe('viewModelInit function', () => {
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'gen4pair5',
-        classes: ['compressed', 'gen4pair5'],
+        classes: ['static', 'compressed', 'gen4pair5'],
         people: ['p0026', 'p0027']
       }
     )
@@ -148,7 +148,7 @@ describe('viewModelInit function', () => {
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'gen4pair6',
-        classes: ['compressed', 'gen4pair6'],
+        classes: ['static', 'compressed', 'gen4pair6'],
         people: ['p0028', 'p0029']
       }
     )
@@ -156,64 +156,199 @@ describe('viewModelInit function', () => {
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'gen4pair7',
-        classes: ['compressed', 'gen4pair7'],
+        classes: ['static', 'compressed', 'gen4pair7'],
         people: ['p0030', 'p0031']
       }
     )
 
     expect(viewModelData.pairObjects).toContainEqual(
       {
-        label: 'ghost0',
-        classes: ['ghost', 'ghost0'],
+        label: 'gen0rootghost',
+        classes: ['ghost', 'gen0root', 'no-show'],
         people: []
       }
     )
+
+    expect(viewModelData.pairObjects).toContainEqual(
+      {
+        label: 'gen1pair0ghost',
+        classes: ['ghost', 'gen1pair0', 'no-show'],
+        people: []
+      }
+    )
+
+    expect(viewModelData.pairObjects).toContainEqual(
+      {
+        label: 'gen2pair0ghost',
+        classes: ['ghost', 'gen2pair0', 'no-show'],
+        people: []
+      }
+    )
+
+    expect(viewModelData.pairObjects).toContainEqual(
+      {
+        label: 'gen2pair1ghost',
+        classes: ['ghost', 'gen2pair1', 'no-show'],
+        people: []
+      }
+    )
+
+    expect(viewModelData.pairObjects).toContainEqual(
+      {
+        label: 'gen3pair0ghost',
+        classes: ['ghost', 'gen3pair0', 'no-show'],
+        people: []
+      }
+    )
+
+    expect(viewModelData.pairObjects).toContainEqual(
+      {
+        label: 'gen3pair1ghost',
+        classes: ['ghost', 'gen3pair1', 'no-show'],
+        people: []
+      }
+    )
+
+    expect(viewModelData.pairObjects).toContainEqual(
+      {
+        label: 'gen3pair2ghost',
+        classes: ['ghost', 'gen3pair2', 'no-show'],
+        people: []
+      }
+    )
+
+    expect(viewModelData.pairObjects).toContainEqual(
+      {
+        label: 'gen3pair3ghost',
+        classes: ['ghost', 'gen3pair3', 'no-show'],
+        people: []
+      }
+    )
+
+    expect(viewModelData.pairObjects).toContainEqual(
+      {
+        label: 'gen4pair0ghost',
+        classes: ['ghost', 'gen4pair0', 'no-show'],
+        people: []
+      }
+    )
+
+    expect(viewModelData.pairObjects).toContainEqual(
+      {
+        label: 'gen4pair1ghost',
+        classes: ['ghost', 'gen4pair1', 'no-show'],
+        people: []
+      }
+    )
+
+    expect(viewModelData.pairObjects).toContainEqual(
+      {
+        label: 'gen4pair2ghost',
+        classes: ['ghost', 'gen4pair2', 'no-show'],
+        people: []
+      }
+    )
+
+    expect(viewModelData.pairObjects).toContainEqual(
+      {
+        label: 'gen4pair3ghost',
+        classes: ['ghost', 'gen4pair3', 'no-show'],
+        people: []
+      }
+    )
+
+    expect(viewModelData.pairObjects).toContainEqual(
+      {
+        label: 'gen4pair4ghost',
+        classes: ['ghost', 'gen4pair4', 'no-show'],
+        people: []
+      }
+    )
+
+    expect(viewModelData.pairObjects).toContainEqual(
+      {
+        label: 'gen4pair5ghost',
+        classes: ['ghost', 'gen4pair5', 'no-show'],
+        people: []
+      }
+    )
+
+    expect(viewModelData.pairObjects).toContainEqual(
+      {
+        label: 'gen4pair6ghost',
+        classes: ['ghost', 'gen4pair6', 'no-show'],
+        people: []
+      }
+    )
+
+    expect(viewModelData.pairObjects).toContainEqual(
+      {
+        label: 'gen4pair7ghost',
+        classes: ['ghost', 'gen4pair7', 'no-show'],
+        people: []
+      }
+    )
+
+    expect(viewModelData.pairObjects).toContainEqual(
+      {
+        label: 'ghost0',
+        classes: ['ghost', 'ghost0', 'no-show'],
+        people: []
+      }
+    )
+
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'ghost1',
-        classes: ['ghost', 'ghost1'],
+        classes: ['ghost', 'ghost1', 'no-show'],
         people: []
       }
     )
+
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'ghost2',
-        classes: ['ghost', 'ghost2'],
+        classes: ['ghost', 'ghost2', 'no-show'],
         people: []
       }
     )
+
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'ghost3',
-        classes: ['ghost', 'ghost3'],
+        classes: ['ghost', 'ghost3', 'no-show'],
         people: []
       }
     )
+
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'ghost4',
-        classes: ['ghost', 'ghost4'],
+        classes: ['ghost', 'ghost4', 'no-show'],
         people: []
       }
     )
+
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'ghost5',
-        classes: ['ghost', 'ghost5'],
+        classes: ['ghost', 'ghost5', 'no-show'],
         people: []
       }
     )
+
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'ghost6',
-        classes: ['ghost', 'ghost6'],
+        classes: ['ghost', 'ghost6', 'no-show'],
         people: []
       }
     )
+
     expect(viewModelData.pairObjects).toContainEqual(
       {
         label: 'ghost7',
-        classes: ['ghost', 'ghost7'],
+        classes: ['ghost', 'ghost7', 'no-show'],
         people: []
       }
     )

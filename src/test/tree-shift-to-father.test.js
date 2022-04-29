@@ -7,7 +7,7 @@ describe('treeShiftToFather function', () => {
 
   test('generates rows of people pair arrays with people in correct shifted position', () => {
     let viewModelData = viewModelInit(familyTreeData, 'p0001', 5)
-    viewModelData = treeShiftToFather(familyTreeData)
+    viewModelData = treeShiftToFather(viewModelData, familyTreeData)
     expect(viewModelData.rows[0][0][0]).toEqual('p0002')
 
     expect(viewModelData.rows[1][0][0]).toEqual('p0003')
@@ -47,7 +47,7 @@ describe('treeShiftToFather function', () => {
 
   test('correctly generates flattened array of updated people pair data', () => {
     let viewModelData = viewModelInit(familyTreeData, 'p0001', 5)
-    viewModelData = treeShiftToFather(familyTreeData)
+    viewModelData = treeShiftToFather(viewModelData, familyTreeData)
 
     expect(viewModelData.pairObjects.length).toEqual(16)
 
