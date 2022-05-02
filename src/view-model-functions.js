@@ -32,12 +32,12 @@
 // references to the people in the tree and their relationship to each other.
 
 
-// pairArrayElements()
+// groupArrayElementsIntoPairs()
 // Takes an array with an even number of elements and returns a new array
 // with the same elements in the same order, but paired into arrays with two
 // elements each. For example:
 //
-// pairArrayElements( [a,b,c,d,e,f,g,h] )
+// groupArrayElementsIntoPairs( [a,b,c,d,e,f,g,h] )
 //
 // would return
 //
@@ -213,21 +213,6 @@ export const getGhostPairObjects = () => {
 
 const ghostPairObjects = getGhostPairObjects()
 
-
-
-// const ghostPairObjects = ghostPairLabels.map( (label) => {
-//   return {
-//     label: label,
-//     classes: ['ghost', label],
-//     people: []
-//   }
-// })
-
-
-
-//////////////////////////////////////////////
-//////////////////////////////////////////////
-
 const connectorFixedClasses = [
   'straight-singleton parents-of-0-0',
   'left-w5 parents-of-1-0',
@@ -286,48 +271,45 @@ export const viewModelInit = (familyTreeData, rootPersonId, generations) => {
 }
 
 
-
-// ----****----    ----****----    ----****----    ----****----    ----****----    //
-// ----****----    ----****----    ----****----    ----****----    ----****----    //
-
-
 export const treeShiftToFather = (viewModelData, familyTreeData) => {
 
-// ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? //
+  // Start with a copy of viewModelData.rows with first generation stripped out.
+  let workingArrays = [...viewModelData.rows]
+  workingArrays.shift()
+
+  workingArrays = workingArrays.map( (row) => {
+    return row.flat()
+  })
+
+  // Here we need to cut each generation in half to remove mother's family.
+  workingArrays = workingArrays.map( (row) => {
+    return row.slice(0, row.length / 2)
+  })
 
 
-  // viewModelData.rows = [ [], [], [], [], [] ]
-  //
-  // growTree(
-  //   familyTreeData,
-  //   viewModelData,
-  //   rootPersonId,
-  //   0,
-  //   generations - 1
-  // )
-  //
-  // let pairsFlat = viewModelData.rows.flat()
-  //
-  // viewModelData.pairObjects = pairsFlat.map((pair, index) => {
-  //   let label = pairLocationLabels[index]
-  //   return {
-  //      label: label,
-  //      classes: graphOfPairLocations[label].classes,
-  //      people: pair
-  //    }
-  // })
-  //
-  // viewModelData.pairObjects = viewModelData.pairObjects.concat(ghostPairObjects)
-  // viewModelData.connectorClasses = [...connectorFixedClasses]
-  //
-  // viewModelData.result = successStatus
-  // return viewModelData
+  // Next we add a new generation (parents of former last generation).
+  let lastGeneration = workingArrays[workingArrays.length - 1]
+
+  let newGeneration = []
+  let father = null
+  let mother = null
+
+  lastGeneration.forEach( (person) => {
+    father = familyTreeData[person].fatherId ? familyTreeData[person].fatherId : null
+    mother = familyTreeData[person].motherId ? familyTreeData[person].motherId : null
+    newGeneration.push(father)
+    newGeneration.push(mother)
+  })
+
+  workingArrays.push(newGeneration)
+
+  let rows = workingArrays.map( (row) => {
+      return groupArrayElementsIntoPairs(row)
+    })
+    viewModelData.rows = rows
+
+  return viewModelData
 }
-
-
-// ----****----    ----****----    ----****----    ----****----    ----****----    //
-// ----****----    ----****----    ----****----    ----****----    ----****----    //
-
 
 
 export const growTree = (
@@ -374,16 +356,21 @@ export const placePerson = (row, person) => {
 }
 
 
-export const pairArrayElements = (arrayIn) => {
+export const groupArrayElementsIntoPairs = (arrayIn) => {
   let result = []
+  let p
 
-  if (arrayIn.length % 2 === 0) {
     while (arrayIn.length > 0) {
-      let p = []
+      if (arrayIn.length % 2 === 0) {
+      p = []
       p.push(arrayIn.shift())
       p.push(arrayIn.shift())
-      result.push(p)
     }
+    else {
+      p = []
+      p.push(arrayIn.shift())
+    }
+    result.push(p)
   }
 
   return result

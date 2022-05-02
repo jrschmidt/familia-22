@@ -1,26 +1,24 @@
 import { test, describe, expect } from 'vitest'
 
-import { pairArrayElements } from '../view-model-functions.js'
+import { groupArrayElementsIntoPairs } from '../view-model-functions.js'
 
-describe('pairArrayElements function', () => {
-
-  test('returns empty array if number of elements is not even', () => {
-    const oddArray = ['p0001' ,'p0002' ,'p0003' ,'p0004' ,'p0005']
-    let resultArray = pairArrayElements(oddArray)
-    expect(resultArray).toStrictEqual( [] )
-  })
+describe('groupArrayElementsIntoPairs function', () => {
 
 test('converts array to array of paired elements in subarrays', () => {
-  let inputArray = ['p0002' ,'p0017']
-  let resultArray = pairArrayElements(inputArray)
+  let inputArray = ['p0001']
+  let resultArray = groupArrayElementsIntoPairs(inputArray)
+  expect(resultArray).toStrictEqual( [ ['p0001'] ] )
+
+  inputArray = ['p0002' ,'p0017']
+  resultArray = groupArrayElementsIntoPairs(inputArray)
   expect(resultArray).toStrictEqual( [ ['p0002', 'p0017'] ] )
 
   inputArray = ['p0003' ,'p0004' , 'p0018', 'p0019']
-  resultArray = pairArrayElements(inputArray)
+  resultArray = groupArrayElementsIntoPairs(inputArray)
   expect(resultArray).toStrictEqual( [ ['p0003', 'p0004'], ['p0018', 'p0019'] ] )
 
   inputArray = ['p0005', 'p0006', 'p0007', 'p0008', 'p0020', 'p0021', 'p0022', 'p0023']
-  resultArray = pairArrayElements(inputArray)
+  resultArray = groupArrayElementsIntoPairs(inputArray)
   expect(resultArray).toStrictEqual( [ ['p0005', 'p0006'], ['p0007', 'p0008'], ['p0020', 'p0021'], ['p0022', 'p0023'] ] )
 })
 
