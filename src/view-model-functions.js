@@ -252,6 +252,7 @@ export const viewModelInit = (familyTreeData, rootPersonId, generations) => {
     generations - 1
   )
 
+  // Extract later as 'rows to pair objects' function
   let pairsFlat = viewModelData.rows.flat()
 
   viewModelData.pairObjects = pairsFlat.map((pair, index) => {
@@ -262,6 +263,7 @@ export const viewModelInit = (familyTreeData, rootPersonId, generations) => {
        people: pair
      }
   })
+  // (end)
 
   viewModelData.pairObjects = viewModelData.pairObjects.concat(ghostPairObjects)
   viewModelData.connectorClasses = [...connectorFixedClasses]
@@ -307,6 +309,19 @@ export const treeShiftToFather = (viewModelData, familyTreeData) => {
       return groupArrayElementsIntoPairs(row)
     })
     viewModelData.rows = rows
+
+    // Extract later as 'rows to pair objects' function
+    let pairsFlat = viewModelData.rows.flat()
+
+    viewModelData.pairObjects = pairsFlat.map((pair, index) => {
+      let label = pairLocationLabels[index]
+      return {
+         label: label,
+         classes: graphOfPairLocations[label].classes,
+         people: pair
+       }
+    })
+    // (end)
 
   return viewModelData
 }

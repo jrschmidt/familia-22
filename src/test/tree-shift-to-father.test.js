@@ -53,105 +53,105 @@ describe('treeShiftToFather function', () => {
 
     expect(viewModelData.pairObjects[0]).toEqual(
       {
-        pairClass: 'singleton gen0root moving',
+        pairClass: 'gen0root singleton no-show',
         people: ['p0002']
       }
     )
 
     expect(viewModelData.pairObjects[1]).toEqual(
       {
-        pairClass: 'normal gen1pair0 moving',
+        pairClass: 'gen1pair0 normal no-show',
         people: ['p0003', 'p0004']
       }
     )
 
     expect(viewModelData.pairObjects[2]).toEqual(
       {
-        pairClass: 'normal gen2pair0 moving',
+        pairClass: 'gen2pair0 normal no-show',
         people: ['p0005', 'p0006']
       }
     )
 
     expect(viewModelData.pairObjects[3]).toEqual(
       {
-        pairClass: 'normal gen2pair1 moving',
+        pairClass: 'gen2pair1 normal no-show',
         people: ['p0007', 'p0008']
       }
     )
 
     expect(viewModelData.pairObjects[4]).toEqual(
       {
-        pairClass: 'normal gen3pair0 moving',
+        pairClass: 'gen3pair0 normal no-show',
         people: ['p0009', 'p0010']
       }
     )
 
     expect(viewModelData.pairObjects[5]).toEqual(
       {
-        pairClass: 'normal gen3pair1 moving',
+        pairClass: 'gen3pair1 normal no-show',
         people: ['p0011', 'p0012']
       }
     )
 
     expect(viewModelData.pairObjects[6]).toEqual(
       {
-        pairClass: 'normal gen3pair2 moving',
+        pairClass: 'gen3pair2 normal no-show',
         people: ['p0013', 'p0014']
       }
     )
 
     expect(viewModelData.pairObjects[7]).toEqual(
       {
-        pairClass: 'normal gen3pair3 moving',
+        pairClass: 'gen3pair3 normal no-show',
         people: ['p0015', 'p0016']
       }
     )
 
     expect(viewModelData.pairObjects[8]).toEqual(
       {
-        pairClass: 'compressed gen4pair0',
+        pairClass: 'compressed gen4pair0 no-show',
         people: ['p0501', 'p0502']
       }
     )
 
     expect(viewModelData.pairObjects[9]).toEqual(
       {
-        pairClass: 'compressed gen4pair1',
+        pairClass: 'compressed gen4pair1 no-show',
         people: ['p0503', 'p0504']
       }
     )
 
     expect(viewModelData.pairObjects[10]).toEqual(
       {
-        pairClass: 'compressed gen4pair2',
+        pairClass: 'compressed gen4pair2 no-show',
         people: ['p0505', 'p0506']
       }
     )
 
     expect(viewModelData.pairObjects[11]).toEqual(
       {
-        pairClass: 'compressed gen4pair3',
+        pairClass: 'compressed gen4pair3 no-show',
         people: ['p0507', 'p0508']
       }
     )
 
     expect(viewModelData.pairObjects[12]).toEqual(
       {
-        pairClass: 'compressed gen4pair4',
+        pairClass: 'compressed gen4pair4 no-show',
         people: ['p0509', 'p0510']
       }
     )
 
     expect(viewModelData.pairObjects[13]).toEqual(
       {
-        pairClass: 'compressed gen4pair5',
+        pairClass: 'compressed gen4pair5 no-show',
         people: ['p0511', 'p0512']
       }
     )
 
     expect(viewModelData.pairObjects[14]).toEqual(
       {
-        pairClass: 'compressed gen4pair6',
+        pairClass: 'compressed gen4pair6 no-show',
         people: ['p0513', 'p0514']
       }
     )
