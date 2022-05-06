@@ -53,6 +53,9 @@ describe('treeShiftToMother function', () => {
 
     expect(viewModelData.pairObjects[0]).toEqual(
       {
+        //  ***  ***  REPLACE WITH THE RE-ORDERED CLASS STRINGS FROM OTHER TESTS!!!!  ***  ***
+        //  ***  ***  REPLACE WITH THE RE-ORDERED CLASS STRINGS FROM OTHER TESTS!!!!  ***  ***
+        //  ***  ***  REPLACE WITH THE RE-ORDERED CLASS STRINGS FROM OTHER TESTS!!!!  ***  ***
         pairClass: 'singleton gen0root moving',
         people: ['p0017']
       }

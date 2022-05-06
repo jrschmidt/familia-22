@@ -1,5 +1,5 @@
 // A set of functions to generate the data necessary to render the family
-// tree display. The following functions are included:
+// tree display. The following functions are exported:
 
 
 // viewModelInit()
@@ -71,112 +71,112 @@ const graphOfPairLocations = {
     parentsOfMaleLocation: 'gen1pair0',
     parentsOfFemaleLocation: 'gen1pair0',
     childLocation: null,
-    classes: ['static', 'singleton', 'gen0root']
+    classes: ['gen0root', 'static', 'singleton']
   },
 
   gen1pair0: {
     parentsOfMaleLocation: 'gen2pair0',
     parentsOfFemaleLocation: 'gen2pair1',
     childLocation: 'gen0root',
-    classes: ['static', 'normal', 'gen1pair0']
+    classes: ['gen1pair0', 'static', 'normal']
   },
 
   gen2pair0: {
     parentsOfMaleLocation: 'gen3pair0',
     parentsOfFemaleLocation: 'gen3pair1',
     childLocation: 'gen1pair0',
-    classes: ['static', 'normal', 'gen2pair0']
+    classes: ['gen2pair0', 'static', 'normal']
   },
 
   gen2pair1: {
     parentsOfMaleLocation: 'gen3pair2',
     parentsOfFemaleLocation: 'gen3pair3',
     childLocation: 'gen1pair0',
-    classes: ['static', 'normal', 'gen2pair1']
+    classes: ['gen2pair1', 'static', 'normal']
   },
 
   gen3pair0: {
     parentsOfMaleLocation: 'gen4pair0',
     parentsOfFemaleLocation: 'gen4pair1',
     childLocation: 'gen2pair0',
-    classes: ['static', 'normal', 'gen3pair0']
+    classes: ['gen3pair0', 'static', 'normal']
   },
 
   gen3pair1: {
     parentsOfMaleLocation: 'gen4pair2',
     parentsOfFemaleLocation: 'gen4pair3',
     childLocation: 'gen2pair0',
-    classes: ['static', 'normal', 'gen3pair1']
+    classes: ['gen3pair1', 'static', 'normal']
   },
 
   gen3pair2: {
     parentsOfMaleLocation: 'gen4pair4',
     parentsOfFemaleLocation: 'gen4pair5',
     childLocation: 'gen2pair1',
-    classes: ['static', 'normal', 'gen3pair2']
+    classes: ['gen3pair2', 'static', 'normal']
   },
 
   gen3pair3: {
     parentsOfMaleLocation: 'gen4pair6',
     parentsOfFemaleLocation: 'gen4pair7',
     childLocation: 'gen2pair1',
-    classes: ['static', 'normal', 'gen3pair3']
+    classes: ['gen3pair3', 'static', 'normal']
   },
 
   gen4pair0: {
     parentsOfMaleLocation: null,
     parentsOfFemaleLocation: null,
     childLocation: 'gen3pair0',
-    classes: ['static', 'compressed', 'gen4pair0']
+    classes: ['gen4pair0', 'static', 'compressed']
   },
 
   gen4pair1: {
     parentsOfMaleLocation: null,
     parentsOfFemaleLocation: null,
     childLocation: 'gen3pair0',
-    classes: ['static', 'compressed', 'gen4pair1']
+    classes: ['gen4pair1', 'static', 'compressed']
   },
 
   gen4pair2: {
     parentsOfMaleLocation: null,
     parentsOfFemaleLocation: null,
     childLocation: 'gen3pair1',
-    classes: ['static', 'compressed', 'gen4pair2']
+    classes: ['gen4pair2', 'static', 'compressed']
   },
 
   gen4pair3: {
     parentsOfMaleLocation: null,
     parentsOfFemaleLocation: null,
     childLocation: 'gen3pair1',
-    classes: ['static', 'compressed', 'gen4pair3']
+    classes: ['gen4pair3', 'static', 'compressed']
   },
 
   gen4pair4: {
     parentsOfMaleLocation: null,
     parentsOfFemaleLocation: null,
     childLocation: 'gen3pair2',
-    classes: ['static', 'compressed', 'gen4pair4']
+    classes: ['gen4pair4', 'static', 'compressed']
   },
 
   gen4pair5: {
     parentsOfMaleLocation: null,
     parentsOfFemaleLocation: null,
     childLocation: 'gen3pair2',
-    classes: ['static', 'compressed', 'gen4pair5']
+    classes: ['gen4pair5', 'static', 'compressed']
   },
 
   gen4pair6: {
     parentsOfMaleLocation: null,
     parentsOfFemaleLocation: null,
     childLocation: 'gen3pair3',
-    classes: ['static', 'compressed', 'gen4pair6']
+    classes: ['gen4pair6', 'static', 'compressed']
   },
 
   gen4pair7: {
     parentsOfMaleLocation: null,
     parentsOfFemaleLocation: null,
     childLocation: 'gen3pair3',
-    classes: ['static', 'compressed', 'gen4pair7']
+    classes: ['gen4pair7', 'static', 'compressed']
   }
 
 }
@@ -186,7 +186,7 @@ export const getGhostPairObjects = () => {
     let label = tag + 'ghost'
     return {
       label: label,
-      classes: ['ghost', tag, 'no-show'],
+      classes: [tag, 'ghost', 'no-show'],
       people: []
     }
   })
@@ -203,7 +203,7 @@ export const getGhostPairObjects = () => {
   ].map( (tag) => {
     return {
       label: tag,
-      classes: ['ghost', tag, 'no-show'],
+      classes: [tag, 'ghost', 'no-show'],
       people: []
     }
   })
@@ -213,22 +213,23 @@ export const getGhostPairObjects = () => {
 
 const ghostPairObjects = getGhostPairObjects()
 
+
 const connectorFixedClasses = [
-  'straight-singleton parents-of-0-0',
-  'left-w5 parents-of-1-0',
-  'right-w5 parents-of-1-1',
-  'left-w3 parents-of-2-0',
-  'right-w3 parents-of-2-1',
-  'left-w3 parents-of-2-2',
-  'right-w3 parents-of-2-3',
-  'straight-skinny parents-of-3-0',
-  'straight-skinny parents-of-3-1',
-  'straight-skinny parents-of-3-2',
-  'straight-skinny parents-of-3-3',
-  'straight-skinny parents-of-3-4',
-  'straight-skinny parents-of-3-5',
-  'straight-skinny parents-of-3-6',
-  'straight-skinny parents-of-3-7'
+'parents-of-0-0 straight-singleton',
+'parents-of-1-0 left-w5',
+'parents-of-1-1 right-w5',
+'parents-of-2-0 left-w3',
+'parents-of-2-1 right-w3',
+'parents-of-2-2 left-w3',
+'parents-of-2-3 right-w3',
+'parents-of-3-0 straight-skinny',
+'parents-of-3-1 straight-skinny',
+'parents-of-3-2 straight-skinny',
+'parents-of-3-3 straight-skinny',
+'parents-of-3-4 straight-skinny',
+'parents-of-3-5 straight-skinny',
+'parents-of-3-6 straight-skinny',
+'parents-of-3-7 straight-skinny'
 ]
 
 
@@ -321,7 +322,9 @@ export const treeShiftToFather = (viewModelData, familyTreeData) => {
          people: pair
        }
     })
-    // (end)
+    // (end 'extract')
+
+
 
   return viewModelData
 }
